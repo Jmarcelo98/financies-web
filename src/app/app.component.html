@@ -7,11 +7,13 @@
 
   <span class="example-spacer"></span>
 
-  <div *ngIf="false">
-    <i class="fi fi-rr-sign-in-alt"></i>
+  <div *ngIf="isLogged == false">
+    <a routerLink="login">
+      <i class="fi fi-rr-sign-in-alt"></i>
+    </a>
   </div>
 
-  <div *ngIf="true">
+  <div *ngIf="isLogged == true">
     <span class="name-user">Olá, {{name}}</span>
 
     <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
@@ -36,3 +38,7 @@
   </div>
 
 </mat-toolbar>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

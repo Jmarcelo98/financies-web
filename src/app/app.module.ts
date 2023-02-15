@@ -5,12 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
-import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
+import { HttpClientModule } from '@angular/common/http';
+import { JwtModule } from '@auth0/angular-jwt';
+import { jwtConfig } from './core/auth/jwt-config';
 
 
 @NgModule({
@@ -23,10 +24,10 @@ import { MatMenuModule } from '@angular/material/menu';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatMenuModule,
-    // MatSidenavModule,
     MatButtonModule,
-    // MatIconModule,
     MatDividerModule,
+    HttpClientModule,
+    JwtModule.forRoot(jwtConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]

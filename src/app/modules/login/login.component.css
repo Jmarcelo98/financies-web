@@ -1,0 +1,7 @@
+.row-center {
+    justify-content: center;
+}
+
+::ng-deep .mat-form-field-suffix {
+    align-self: center !important;
+}

@@ -1,3 +1,79 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+:root {
+
+    /* TOOLBAR */
+    --color-bg-toolbar: #3f51b5;
+    --shadow-toolbar: 0px 2px 10px 0px #00800063;
+
+    /* CARD */
+    --shadow-card: 0 3px 4px 0px rgba(0, 0, 0, 0.6);
+
+    /* NEUTRALS */
+    --color-neutral-dark-down: #8D95AC;
+    --color-neutral-medium-up: #AFBAD7;
+
+    /* FONT-SIZES */
+    --font-size-sm: 14px;
+
+    /* FONT WEIGHT */
+    --font-weight-regular: 400;
+
+    /* SPACES */
+    --space-lg: 16px;
+
+}
+
+
+/* card */
+mat-card-title {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: x-large;
+}
+
+mat-card-subtitle {
+    font-size: 12px;
+    font-style: italic;
+}
+
+.titulo-card {
+    font-size: 22px;
+}
+
+.example-card {
+    box-shadow: var(--shadow-card) !important;
+}
+
+/* fim card */
+
+/* input e matform */
+mat-form-field.no-padding .mat-form-field-wrapper {
+    padding-bottom: 0px !important;
+}
+
+/* Border */
+.mat-form-field-appearance-outline .mat-form-field-outline {
+    color: var(--color-neutral-medium-up);
+}
+
+form mat-form-field.full-width {
+    width: 100%;
+}
+
+form mat-form-field .mat-form-field-infix {
+    margin-top: 4px;
+    border: 0;
+}
+
+form mat-label {
+    color: var(--color-neutral-dark-down);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-regular);
+}
+/* fim input e matform */
+
+.mr {
+    margin-right: var(--space-lg);
+}
