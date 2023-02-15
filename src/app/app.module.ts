@@ -9,9 +9,11 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatMenuModule } from '@angular/material/menu';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtModule } from '@auth0/angular-jwt';
 import { jwtConfig } from './core/auth/jwt-config';
+import { HttpErrorInterceptor } from './core/interceptor/http-error.interceptor';
+import { SnackbarComponentModule } from './shared/components/snackbar/snackbar.component.module';
 
 
 @NgModule({
@@ -26,10 +28,13 @@ import { jwtConfig } from './core/auth/jwt-config';
     MatMenuModule,
     MatButtonModule,
     MatDividerModule,
+    SnackbarComponentModule,
     HttpClientModule,
     JwtModule.forRoot(jwtConfig)
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

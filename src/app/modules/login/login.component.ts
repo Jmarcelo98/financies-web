@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/auth/auth.service';
 import { TokenStorageService } from 'src/app/core/auth/token-storage.service';
 import { CustomValidations } from 'src/app/shared/utils/custom-validations';
@@ -11,11 +12,11 @@ import { CustomValidations } from 'src/app/shared/utils/custom-validations';
 })
 export class LoginComponent {
 
-  constructor(private loginService: AuthService, private tokenStorage: TokenStorageService) { }
+  constructor(private loginService: AuthService, private tokenStorage: TokenStorageService, private router: Router) { }
 
   formLogin = new FormGroup({
     email: new FormControl(null, [Validators.required]),
-    password: new FormControl(null, [Validators.required, Validators.minLength(5)]),
+    password: new FormControl(null, [Validators.required, Validators.minLength(4)]),
   });
 
   hide: boolean = true;
@@ -25,14 +26,15 @@ export class LoginComponent {
 
     if (this.formLogin.valid) {
 
-      this.loginService.login(this.formLogin.getRawValue()).subscribe(res => {
+      this.loginService.login(this.formLogin.value.email, this.formLogin.value.password).subscribe(res => {
         this.tokenStorage.saveToken(res)
+        this.router.navigate([''])
       }, err => {
         console.log(err);
       })
 
-    } 
-    
+    }
+
     else {
       this.validaCampos(this.formLogin);
     }
