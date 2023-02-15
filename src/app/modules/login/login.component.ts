@@ -15,18 +15,28 @@ export class LoginComponent {
 
   formLogin = new FormGroup({
     email: new FormControl(null, [Validators.required]),
-    password: new FormControl(null, [Validators.required]),
+    password: new FormControl(null, [Validators.required, Validators.minLength(5)]),
   });
 
   hide: boolean = true;
 
 
   login() {
-    this.loginService.login(this.formLogin.getRawValue()).subscribe(res => {
-      this.tokenStorage.saveToken(res)
-    }, err => {
-      console.log(err);
-    })
+
+    if (this.formLogin.valid) {
+
+      this.loginService.login(this.formLogin.getRawValue()).subscribe(res => {
+        this.tokenStorage.saveToken(res)
+      }, err => {
+        console.log(err);
+      })
+
+    } 
+    
+    else {
+      this.validaCampos(this.formLogin);
+    }
+
   }
 
   validaCampos(form: FormGroup) {

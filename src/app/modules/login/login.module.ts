@@ -9,6 +9,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
+import { FormControlExceptionModule } from 'src/app/shared/directives/form-control-exception/form-control-exception.module';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatInputModule,
     FormsModule,
     ReactiveFormsModule,
+    FormControlExceptionModule,
     MatIconModule,
     MatButtonModule
   ]

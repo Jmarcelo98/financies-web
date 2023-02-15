@@ -5,18 +5,31 @@
 :root {
 
     /* TOOLBAR */
-    --color-bg-toolbar: #3f51b5;
     --shadow-toolbar: 0px 2px 10px 0px #00800063;
 
     /* CARD */
     --shadow-card: 0 3px 4px 0px rgba(0, 0, 0, 0.6);
 
+    /* PRIORITY */
+    --color-primary: #3f51b5;
+    --color-white: white;
+    --color-primary-hover: #4d5db8e2;
+
     /* NEUTRALS */
+    --color-neutral-dark-up: #27314A;
+    --color-neutral-dark-medium: #4F596D;
     --color-neutral-dark-down: #8D95AC;
     --color-neutral-medium-up: #AFBAD7;
+    --color-neutral-medium-down: #EEEFF3;
+    --color-neutral-light: #FFFFFF;
+    --color-neutral-light-up: #F7F8F9;
 
     /* FONT-SIZES */
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --font-size-xs: 12px;
     --font-size-sm: 14px;
+    --space-lg: 16px;
 
     /* FONT WEIGHT */
     --font-weight-regular: 400;
@@ -53,7 +66,6 @@ mat-form-field.no-padding .mat-form-field-wrapper {
     padding-bottom: 0px !important;
 }
 
-/* Border */
 .mat-form-field-appearance-outline .mat-form-field-outline {
     color: var(--color-neutral-medium-up);
 }
@@ -72,8 +84,29 @@ form mat-label {
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-regular);
 }
+
 /* fim input e matform */
 
 .mr {
     margin-right: var(--space-lg);
+}
+
+/* padronizar botao */
+
+
+
+.ds-button-primary {
+    background: var(--color-primary);
+    color: white;
+    margin: 10px 20px !important;
+}
+
+.ds-button-primary i {
+    font-size: 14px;
+    margin-right: var(--space-sm);
+    display: inline-block;
+}
+
+.ds-button-primary:hover {
+    background-color: var(--color-primary-hover);
 }
