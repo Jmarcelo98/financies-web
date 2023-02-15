@@ -29,6 +29,9 @@ export class LoginComponent {
       this.loginService.login(this.formLogin.value.email, this.formLogin.value.password).subscribe(res => {
         this.tokenStorage.saveToken(res)
         this.router.navigate([''])
+          .then(() => {
+            window.location.reload();
+          });
       }, err => {
         console.log(err);
       })

@@ -8,7 +8,7 @@ mat-toolbar {
   margin-top: 25px;
 }
 
-.logo-app>img {
+.logo-app>a>img {
   width: 70px;
 }
 

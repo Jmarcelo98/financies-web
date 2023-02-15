@@ -46,9 +46,10 @@ export class AppComponent implements OnInit{
   }
 
   public logout(event: { preventDefault: () => void; }) {
-    debugger
+    console.log("a");
+    
     event.preventDefault();
-    // this.oauthService.logOut();
+    this.tokenStorageService.logout();
     window.location.reload();
   }
 

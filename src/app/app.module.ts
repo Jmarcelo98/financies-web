@@ -24,12 +24,12 @@ import { SnackbarComponentModule } from './shared/components/snackbar/snackbar.c
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     MatToolbarModule,
     MatMenuModule,
     MatButtonModule,
     MatDividerModule,
     SnackbarComponentModule,
-    HttpClientModule,
     JwtModule.forRoot(jwtConfig)
   ],
   providers: [

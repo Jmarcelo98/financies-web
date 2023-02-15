@@ -1,9 +1,15 @@
+import { Injectable } from "@angular/core";
 import { ActivatedRouteSnapshot, CanActivate, CanActivateChild, Router, RouterStateSnapshot, UrlTree } from "@angular/router";
 import { Observable } from "rxjs";
 import { SnackbarProvider } from "src/app/shared/provider/snackbar.provider";
 import { TokenStorageService } from "./token-storage.service";
 
+@Injectable({
+    providedIn: 'root'
+})
 export class AuthGuardService implements CanActivate {
+
+
 
     constructor(private tokenStorageService: TokenStorageService,
         private router: Router, private snackBar: SnackbarProvider) { }
@@ -16,7 +22,6 @@ export class AuthGuardService implements CanActivate {
     }
 
     isUsuarioAuthenticated(): boolean {
-
 
         const token = this.tokenStorageService.getToken();
 
