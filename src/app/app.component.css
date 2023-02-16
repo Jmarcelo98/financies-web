@@ -38,6 +38,10 @@ a {
   color: white;
 }
 
+.link-menu {
+  color: black;
+}
+
 .offcanvas-body {
   flex-grow: 0;
 }

@@ -11,6 +11,8 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { MatTreeModule } from '@angular/material/tree';
+
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtModule } from '@auth0/angular-jwt';
@@ -36,6 +38,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatSidenavModule,
     MatListModule,
     MatIconModule,
+    MatTreeModule,
     SnackbarComponentModule,
     JwtModule.forRoot(jwtConfig)
   ],
