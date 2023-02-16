@@ -8,9 +8,9 @@ mat-toolbar {
   margin-top: 25px;
 }
 
-.logo-app>a>img {
+/* .logo-app>a>img {
   width: 70px;
-}
+} */
 
 .image-user {
   border-radius: 50%;
@@ -23,7 +23,7 @@ mat-toolbar {
   font-size: 15px;
 }
 
-.fi {
+.iconLogin {
   margin-right: 15px;
   cursor: pointer;
 }
@@ -41,18 +41,3 @@ a {
   text-decoration: none;
   color: white;
 }
-
-::ng-deep .mat-menu-content {
-  padding: 0 !important;
-}
-
-/* menu */
-.menu {
-  border: solid red 1px;
-  /* display: inline-grid; */
-}
-
-/* .itens-menu {
-  margin-top: 25px;
-  margin-left: 15px;
-} */
