@@ -28,11 +28,16 @@ mat-toolbar {
   cursor: pointer;
 }
 
+.iconCanvas {
+  margin-left: 5px;
+}
+
 .example-spacer {
   flex: 1 1 auto;
 }
 
 a {
+  margin-top: 5px;
   text-decoration: none;
   color: white;
 }
@@ -40,3 +45,14 @@ a {
 ::ng-deep .mat-menu-content {
   padding: 0 !important;
 }
+
+/* menu */
+.menu {
+  border: solid red 1px;
+  /* display: inline-grid; */
+}
+
+/* .itens-menu {
+  margin-top: 25px;
+  margin-left: 15px;
+} */
