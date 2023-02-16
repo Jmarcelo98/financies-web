@@ -8,10 +8,6 @@ mat-toolbar {
   margin-top: 25px;
 }
 
-/* .logo-app>a>img {
-  width: 70px;
-} */
-
 .image-user {
   border-radius: 50%;
   width: 40px;
@@ -40,4 +36,8 @@ a {
   margin-top: 5px;
   text-decoration: none;
   color: white;
+}
+
+.offcanvas-body {
+  flex-grow: 0;
 }
