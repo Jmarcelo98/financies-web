@@ -57,10 +57,10 @@ mat-tree-node,
   margin-bottom: 5px;
 }
 
-/* .offcanvas-body {
-  flex-grow: 0;
-} */
-
 .menu-item {
   font-size: var(--font-size-lg);
+}
+
+.menu-item > .col-6 > a > span {
+  box-shadow: var(--shadow-toolbar-register-login)
 }

@@ -12,9 +12,26 @@
   <span class="example-spacer"></span>
 
   <!-- botão redirecionar para login -->
-  <a routerLink="login" *ngIf="isLogged == false">
-    <i class="iconLogin fi fi-rr-sign-in-alt"></i>
-  </a>
+  <div *ngIf="isLogged == false">
+
+    <div class="row menu-item">
+      <div class="col-6">
+        <a routerLink="register">
+          <span>Register</span>
+        </a>
+      </div>
+
+      <div class="col-6">
+        <a routerLink="login">
+          <span>Login</span>
+        </a>
+      </div>
+    </div>
+
+
+    <!-- <i class="iconLogin fi fi-rr-sign-in-alt"></i> -->
+
+  </div>
 
   <!-- nome e foto -->
   <div *ngIf="isLogged == true">
@@ -67,7 +84,7 @@
 </div>
 
 <!-- Offcanvas Sidebar -->
-<div class="offcanvas offcanvas-start" id="demo" >
+<div class="offcanvas offcanvas-start" id="demo">
   <div class="offcanvas-header">
     <h1 class="offcanvas-title">Menu</h1>
     <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas"></button>
@@ -84,7 +101,7 @@
         <!-- <button mat-icon-button disabled></button> -->
         <a class="menu-item" [routerLink]="node.link">
           <!-- <i class="fi fi-rr-chat-arrow-grow"></i> -->
-           <img class="icon-menu" [src]="node.icon"> {{node.name}}
+          <img class="icon-menu" [src]="node.icon"> {{node.name}}
         </a>
 
       </mat-tree-node>
