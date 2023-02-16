@@ -35,13 +35,32 @@ mat-toolbar {
 a {
   margin-top: 5px;
   text-decoration: none;
-  color: white;
+  color: var(--color-white);
 }
 
-.link-menu {
-  color: black;
+.offcanvas-start {
+  background-color: var(--color-black-canvas);
 }
 
-.offcanvas-body {
+.mat-tree {
+  background-color: var(--color-black-canvas);
+  display: inline;
+}
+
+mat-tree-node,
+.offcanvas-title {
+  color: var(--color-white);
+}
+
+.icon-menu {
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+
+/* .offcanvas-body {
   flex-grow: 0;
+} */
+
+.menu-item {
+  font-size: var(--font-size-lg);
 }

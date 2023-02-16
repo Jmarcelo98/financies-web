@@ -6,6 +6,7 @@ import { TokenStorageService } from './core/auth/token-storage.service';
 interface MenuNode {
   name: string;
   link?: string;
+  icon?: string;
   children?: MenuNode[];
 }
 
@@ -13,25 +14,27 @@ const TREE_DATA: MenuNode[] = [
   {
     name: 'Dashboard',
     link: '',
+    icon: './assets/images/icons/home.png'
   },
   {
     name: 'Income',
     children: [
-      { name: 'Incomes', link: 'income' }, { name: 'Types Income', link: 'type-income' }
+      { name: 'Incomes', link: 'income', icon: './assets/images/icons/income.png' }, { name: 'Types Income', link: 'type-income' }
     ]
   },
   {
     name: 'Expense',
     children: [
-      { name: 'Expenses', link: 'expense' }, { name: 'Types Income', link: 'type-expense' }
+      { name: 'Expenses', link: 'expense',  icon: './assets/images/icons/expense.png'  }, { name: 'Types Income', link: 'type-expense' }
     ]
-  }
+  },
 ];
 
 interface ExampleFlatNode {
   expandable: boolean;
   name: string;
   link: string;
+  icon: string;
   level: number;
 }
 
@@ -51,49 +54,6 @@ export class AppComponent implements OnInit {
   constructor(private tokenStorageService: TokenStorageService) {
     this.dataSource.data = TREE_DATA;
   }
-
-  menuItems = [
-    {
-      label: 'Dashboard',
-      icon: 'fi-rr-home',
-      routerLink: ''
-    },
-    {
-      label: 'Incomes',
-      icon: 'fi-rr-chat-arrow-grow',
-      items: [
-        {
-          label: 'Income',
-          icon: 'fi fi-rr-arrow-right',
-          routerLink: 'income'
-        },
-        {
-          label: 'Type Income',
-          icon: 'fi fi-rr-arrow-right',
-          routerLink: 'type-income'
-        }
-      ]
-    },
-    {
-      label: 'Expenses',
-      icon: 'fi-rr-chat-arrow-down',
-      items: [
-        {
-          label: 'Expense',
-          icon: 'fi fi-rr-arrow-right',
-          routerLink: 'expense'
-        },
-        {
-          label: 'Type Income',
-          icon: 'fi fi-rr-arrow-right',
-          routerLink: 'type-expense'
-        }
-      ]
-    },
-
-
-  ];
-
 
   ngOnInit(): void {
 
@@ -116,6 +76,7 @@ export class AppComponent implements OnInit {
       expandable: !!node.children && node.children.length > 0,
       name: node.name,
       link: node.link,
+      icon: node.icon,
       level: level,
     };
   };

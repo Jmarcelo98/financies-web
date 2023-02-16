@@ -15,6 +15,7 @@
     --color-white: white;
     --color-primary-hover: #4d5db8e2;
 
+
     /* NEUTRALS */
     --color-neutral-dark-up: #27314A;
     --color-neutral-dark-medium: #4F596D;
@@ -24,11 +25,13 @@
     --color-neutral-light: #FFFFFF;
     --color-neutral-light-up: #F7F8F9;
 
+
     /* FONT-SIZES */
     --space-xs: 4px;
     --space-sm: 8px;
     --font-size-xs: 12px;
     --font-size-sm: 14px;
+    --font-size-lg: 16px;
     --space-lg: 16px;
 
     /* FONT WEIGHT */
@@ -37,6 +40,9 @@
     /* FEEDBACKS */
     --color-feedback-negative-light: #FBE5E7;
     --color-feedback-negative-medium: #DD1F2E;
+
+    /* CANVAS */
+    --color-black-canvas: #181818eb;
 
 }
 
