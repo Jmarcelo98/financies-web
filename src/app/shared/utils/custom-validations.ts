@@ -25,6 +25,18 @@ export class CustomValidations {
         }
     };
 
+    static checkPassword: ValidatorFn = (group: AbstractControl): ValidationErrors | null => {
+        const password = group.get('password').value;
+        const passwordConfirm = group.get('passwordConfirm').value;
+
+        if (password === passwordConfirm) {
+            return null;
+        } else {
+            group.get('passwordConfirm').setErrors({ nonIdenticalPassword: true });
+            return { nonIdenticalPassword: true };
+        }
+    };
+
     // static emailValidator(): ValidatorFn {
     //   return (control: AbstractControl): { [ key: string ]: any } => {
     //
