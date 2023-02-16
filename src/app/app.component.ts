@@ -19,13 +19,15 @@ const TREE_DATA: MenuNode[] = [
   {
     name: 'Income',
     children: [
-      { name: 'Incomes', link: 'income', icon: './assets/images/icons/income.png' }, { name: 'Types Income', link: 'type-income' }
+      { name: 'Incomes', link: 'income', icon: './assets/images/icons/income.png' },
+      { name: 'Types Income', link: 'type-income', icon: './assets/images/icons/type-income.png'  }
     ]
   },
   {
     name: 'Expense',
     children: [
-      { name: 'Expenses', link: 'expense',  icon: './assets/images/icons/expense.png'  }, { name: 'Types Income', link: 'type-expense' }
+      { name: 'Expenses', link: 'expense', icon: './assets/images/icons/expense.png' },
+      { name: 'Types Expense', link: 'type-expense', icon: './assets/images/icons/type-expense.png' }
     ]
   },
 ];
