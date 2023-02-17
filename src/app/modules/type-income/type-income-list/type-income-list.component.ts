@@ -31,6 +31,10 @@ export class TypeIncomeListComponent implements OnInit {
     })
   }
 
+  addTypeIncome() {
+    
+  }
+
   public pageClick(paginator?: IPaginator) {
     this.paginator = paginator;
     this.getAll()
