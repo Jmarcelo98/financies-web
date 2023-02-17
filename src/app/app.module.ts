@@ -21,6 +21,7 @@ import { HttpErrorInterceptor } from './core/interceptor/http-error.interceptor'
 import { SnackbarComponentModule } from './shared/components/snackbar/snackbar.component.module';
 import { MatIconModule } from '@angular/material/icon';
 import { NgxUiLoaderConfig, NgxUiLoaderHttpConfig, NgxUiLoaderHttpModule, NgxUiLoaderModule, NgxUiLoaderRouterModule, SPINNER } from 'ngx-ui-loader';
+import { AuthInterceptor } from './core/interceptor/auth.interceptor';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   fgsType: SPINNER.fadingCircle,
@@ -54,10 +55,11 @@ const ngxUiHttpLoaderConfig: NgxUiLoaderHttpConfig = {
     NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
     NgxUiLoaderRouterModule,
     NgxUiLoaderHttpModule.forRoot(ngxUiHttpLoaderConfig),
-    JwtModule.forRoot(jwtConfig)
+    JwtModule.forRoot(jwtConfig),
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })

@@ -26,10 +26,12 @@ export class RegisterComponent implements OnInit {
   }, { validators: CustomValidations.checkPassword });
 
   ngOnInit(): void {
+    if (this.tokenStorage.getToken() != null) {
+      this.router.navigate([''])
+    }
   }
 
   register() {
-
     if (this.formRegister.valid) {
       this.authService.register(this.formRegister.value.email, this.formRegister.value.password).subscribe(res => {
         this.login();
