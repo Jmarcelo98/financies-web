@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/auth/auth.service';
@@ -10,9 +10,16 @@ import { CustomValidations } from 'src/app/shared/utils/custom-validations';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
 
   constructor(private loginService: AuthService, private tokenStorage: TokenStorageService, private router: Router) { }
+ 
+  ngOnInit(): void {
+    if(this.tokenStorage.getToken() != null) {
+      this.router.navigate([''])
+    }
+    
+  }
 
   formLogin = new FormGroup({
     email: new FormControl(null, [Validators.required]),

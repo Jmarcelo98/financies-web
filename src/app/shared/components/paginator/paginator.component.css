@@ -1,0 +1,39 @@
+#paginator {
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#paginator button {
+  margin: 0 8px;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  background: transparent;
+  color: var(--color-primary);
+  border: none;
+  font-size: var(--font-size-xs);
+  border-radius: 100%;
+  font-weight: var(--font-weight-bold);
+}
+
+#paginator button.selected {
+  border: solid 1px var(--color-neutral-medium-up);
+  background: var(--color-neutral-light);
+  color: var(--color-bg-dark-up);
+}
+
+#paginator button.arrow-button {
+  width: 23px;
+  height: 23px;
+  color: var(--color-bg-dark-up);
+  background: var(--color-neutral-medium-down);
+  font-size: var(--font-size-2xs);
+}
+
+#paginator button[disabled] {
+  background: var(--color-neutral-light-up);
+  color: var(--color-neutral-medium-up);
+}

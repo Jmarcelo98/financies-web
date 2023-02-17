@@ -46,7 +46,8 @@
                                     <mat-icon>{{hideConfirm ? 'visibility_off' : 'visibility'}}</mat-icon>
                                 </button>
 
-                                <input matInput [type]="hideConfirm ? 'password' : 'text' " formControlName="passwordConfirm">
+                                <input matInput [type]="hideConfirm ? 'password' : 'text' "
+                                    formControlName="passwordConfirm">
                             </mat-form-field>
                         </div>
 
@@ -57,8 +58,9 @@
 
                         <div class="col-12">
 
-                            <button mat-button class=" ds-button-primary" (click)="register()"><i
-                                    class="fi fi-rr-check"></i>Register</button>
+                            <button mat-button type="button" class="ds-button-primary" (click)="register()">
+                                <i class="fi fi-rr-check"> </i>Register
+                            </button>
 
                         </div>
 
