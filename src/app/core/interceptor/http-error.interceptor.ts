@@ -3,7 +3,6 @@ import { HttpErrorResponse, HttpHandler, HttpInterceptor, HttpRequest } from '@a
 import { catchError, retry } from 'rxjs/operators';
 import { throwError } from 'rxjs';
 import { SnackbarProvider } from '../../shared/provider/snackbar.provider';
-import { environment } from 'src/environments/environment';
 
 @Injectable()
 export class HttpErrorInterceptor implements HttpInterceptor {
@@ -22,6 +21,9 @@ export class HttpErrorInterceptor implements HttpInterceptor {
                 } else if (error.status === 405) {
                     // Implemente sua msg amigável
                     this.snackBar.showSnackErro('HttpErrorInterceptor: Erro 405');
+                }
+                else if (error.status === 409) {
+                    this.snackBar.showSnackErro(error.error.description);
                 }
                 return throwError(error);
             })

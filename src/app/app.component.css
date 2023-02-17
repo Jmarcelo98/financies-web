@@ -24,6 +24,10 @@ mat-toolbar {
   cursor: pointer;
 }
 
+.loggedUserIcon {
+  margin-right: 15px;
+}
+
 .iconCanvas {
   margin-left: 5px;
 }
@@ -61,6 +65,6 @@ mat-tree-node,
   font-size: var(--font-size-lg);
 }
 
-.menu-item > .col-6 > a > span {
+.menu-item>.col-6>a>span {
   box-shadow: var(--shadow-toolbar-register-login)
 }

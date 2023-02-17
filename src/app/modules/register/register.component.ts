@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/core/auth/auth.service';
+import { TokenStorageService } from 'src/app/core/auth/token-storage.service';
 import { CustomValidations } from 'src/app/shared/utils/custom-validations';
 
 @Component({
@@ -9,7 +12,7 @@ import { CustomValidations } from 'src/app/shared/utils/custom-validations';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authService: AuthService, private router: Router, private tokenStorage: TokenStorageService) { }
 
   hide: boolean = true;
 
@@ -20,7 +23,7 @@ export class RegisterComponent implements OnInit {
     password: new FormControl(null, [Validators.required, Validators.minLength(4)]),
     passwordConfirm: new FormControl(null, [Validators.required]),
 
-  }, {validators: CustomValidations.checkPassword});
+  }, { validators: CustomValidations.checkPassword });
 
   ngOnInit(): void {
   }
@@ -28,24 +31,29 @@ export class RegisterComponent implements OnInit {
   register() {
 
     if (this.formRegister.valid) {
+      this.authService.register(this.formRegister.value.email, this.formRegister.value.password).subscribe(res => {
+        this.login();
+      })
 
-      // this.loginService.login(this.formLogin.value.email, this.formLogin.value.password).subscribe(res => {
-      //   this.tokenStorage.saveToken(res)
-      //   this.router.navigate([''])
-      //     .then(() => {
-      //       window.location.reload();
-      //     });
-      // }, err => {
-      //   console.log(err);
-      // })
-
-    }
-
-    else {
+    } else {
       this.validaCampos(this.formRegister);
     }
 
   }
+
+  login() {
+    this.authService.login(this.formRegister.value.email, this.formRegister.value.password).subscribe(res => {
+      this.tokenStorage.saveToken(res)
+      this.router.navigate([''])
+        .then(() => {
+          window.location.reload();
+        });
+    }, err => {
+      console.log(err);
+    })
+  }
+
+
 
   validaCampos(form: FormGroup) {
     const controls = Object.keys(form.controls);
