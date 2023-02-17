@@ -20,7 +20,18 @@ import { jwtConfig } from './core/auth/jwt-config';
 import { HttpErrorInterceptor } from './core/interceptor/http-error.interceptor';
 import { SnackbarComponentModule } from './shared/components/snackbar/snackbar.component.module';
 import { MatIconModule } from '@angular/material/icon';
+import { NgxUiLoaderConfig, NgxUiLoaderHttpConfig, NgxUiLoaderHttpModule, NgxUiLoaderModule, NgxUiLoaderRouterModule, SPINNER } from 'ngx-ui-loader';
 
+const ngxUiLoaderConfig: NgxUiLoaderConfig = {
+  fgsType: SPINNER.fadingCircle,
+  fgsColor: '#2256E1',
+  pbColor: '#2256E1',
+  text: 'Carregando...'
+};
+
+const ngxUiHttpLoaderConfig: NgxUiLoaderHttpConfig = {
+  delay: 200, showForeground: true
+};
 
 @NgModule({
   declarations: [
@@ -40,6 +51,9 @@ import { MatIconModule } from '@angular/material/icon';
     MatIconModule,
     MatTreeModule,
     SnackbarComponentModule,
+    NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
+    NgxUiLoaderRouterModule,
+    NgxUiLoaderHttpModule.forRoot(ngxUiHttpLoaderConfig),
     JwtModule.forRoot(jwtConfig)
   ],
   providers: [

@@ -1,6 +1,7 @@
 import { FlatTreeControl } from '@angular/cdk/tree';
 import { Component, OnInit } from '@angular/core';
 import { MatTreeFlatDataSource, MatTreeFlattener } from '@angular/material/tree';
+import { Router } from '@angular/router';
 import { TokenStorageService } from './core/auth/token-storage.service';
 
 interface MenuNode {
@@ -20,7 +21,7 @@ const TREE_DATA: MenuNode[] = [
     name: 'Income',
     children: [
       { name: 'Incomes', link: 'income', icon: './assets/images/icons/income.png' },
-      { name: 'Types Income', link: 'type-income', icon: './assets/images/icons/type-income.png'  }
+      { name: 'Types Income', link: 'type-income', icon: './assets/images/icons/type-income.png' }
     ]
   },
   {
@@ -53,7 +54,7 @@ export class AppComponent implements OnInit {
   isLogged: boolean = false
 
 
-  constructor(private tokenStorageService: TokenStorageService) {
+  constructor(private tokenStorageService: TokenStorageService, private router: Router) {
     this.dataSource.data = TREE_DATA;
   }
 
@@ -68,7 +69,10 @@ export class AppComponent implements OnInit {
   public logout(event: { preventDefault: () => void; }) {
     event.preventDefault();
     this.tokenStorageService.logout();
-    window.location.reload();
+    this.router.navigate(['login'])
+      .then(() => {
+        window.location.reload();
+      });
   }
 
   hasChild = (_: number, node: ExampleFlatNode) => node.expandable;
