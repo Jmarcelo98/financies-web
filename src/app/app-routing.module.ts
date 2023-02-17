@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthGuardService } from './core/auth/can-active.service';
 
 const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule),
-    canActivate: [AuthGuardService],
   },
   {
     path: 'login',
@@ -19,8 +17,12 @@ const routes: Routes = [
   {
     path: 'type-income',
     loadChildren: () => import('./modules/type-income/type-income-list/type-income-list.module').then(m => m.TypeIncomeListModule),
-    canActivate: [AuthGuardService],
+  },
+  {
+    path: 'type-income/:id',
+    loadChildren: () => import('./modules/type-income/type-income-view/type-income-view.module').then(m => m.TypeIncomeViewModule),
   }
+
 ];
 
 @NgModule({

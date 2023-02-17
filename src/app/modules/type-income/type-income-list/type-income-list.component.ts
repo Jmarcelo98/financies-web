@@ -14,7 +14,7 @@ export class TypeIncomeListComponent implements OnInit {
   paginator: IPaginator = {
     pageIndex: 0,
     totalElements: 0,
-    pageSize: 1,
+    pageSize: 10,
   }
 
   dataSource: any;
