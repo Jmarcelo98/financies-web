@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-type-income-view',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TypeIncomeViewComponent implements OnInit {
 
-  constructor() { }
+  constructor(private activatedRoute: ActivatedRoute) {
+    this.typeIncomeId = this.activatedRoute.snapshot.params.id;
+  }
 
   ngOnInit(): void {
   }
+
+  typeIncomeId: number = 0;
 
 }

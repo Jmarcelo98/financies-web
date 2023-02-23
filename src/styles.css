@@ -15,7 +15,9 @@
     --color-primary: #3f51b5;
     --color-white: white;
     --color-primary-hover: #4d5db8e2;
-
+    --color-btn-add: #3f51b529;
+    --color-danger: #b53f3f;
+    --color-danger-hover: #b84d4de2;
 
     /* NEUTRALS */
     --color-neutral-dark-up: #27314A;
@@ -29,33 +31,39 @@
 
     /* FONT-SIZES */
     --font-size-2xs: 10px;
-    --space-xs: 4px;
-    --space-sm: 8px;
     --font-size-xs: 12px;
     --font-size-sm: 14px;
     --font-size-lg: 16px;
     --font-size-lgg: 20px;
-    --space-lg: 16px;
 
-    /* FONT WEIGHT */
-    --font-weight-regular: 400;
+    /* SPACES */
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-lg: 16px;
+    --space-xl: 24px;
 
     /* FEEDBACKS */
     --color-feedback-negative-light: #FBE5E7;
+    --color-feedback-positive-medium: #238A4F;
     --color-feedback-negative-medium: #DD1F2E;
 
     /* CANVAS */
     --color-black-canvas: #181818eb;
 
     /* FONT WEIGHT */
+    --font-weight-regular: 400;
     --font-weight-bold: 700;
 
     /* BACKGROUNDS */
     --color-bg-dark-up: #27314A;
+    --color-bg-dark-down: #254890;
 
 }
 
-
+/* GLOBAL */
+.newItem {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
 
 
 /* CONFIG CARD */
@@ -123,6 +131,22 @@ form mat-label {
     background-color: var(--color-primary-hover);
 }
 
+.ds-button-danger {
+    background: var(--color-danger);
+    color: white;
+    margin: 10px 20px !important;
+}
+
+.ds-button-danger i {
+    font-size: 14px;
+    margin-right: var(--space-sm);
+    display: inline-block;
+}
+
+.ds-button-danger:hover {
+    background-color: var(--color-danger-hover);
+}
+
 /* CONFIG SNACKS */
 .snack-erro {
     background: var(--color-feedback-negative-light);
@@ -133,4 +157,10 @@ form mat-label {
 .snack-erro .icon.erro {
     color: var(--color-feedback-negative-medium);
     display: initial;
+}
+
+.snack-sucesso {
+    background: var(--color-feedback-positive-medium);
+    color: var(--color-white);
+    border-left: solid 3px var(--color-feedback-negative-ligh);
 }

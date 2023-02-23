@@ -1,5 +1,17 @@
 <div class="page-container" id="type-income-list">
 
+    <div class="demo-button-container">
+
+        <!-- <button mat-raised-button (click)="openDialog('0ms', '0ms')" class="demo-button">
+            <span class="newItem">New income type</span>
+        </button> -->
+
+        <button mat-raised-button (click)="addTypeIncome()" class="demo-button">
+            <span class="newItem">New income type</span>
+        </button>
+
+    </div>
+
     <div class="row">
 
         <div class="col-12">
@@ -22,13 +34,13 @@
                     </td>
                 </ng-container>
 
-                <tr mat-row *matRowDef="let row; columns: displayedColumns;" [routerLink]="['visualizar', row.id]">
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;" [routerLink]="[row.id]">
                 </tr>
 
             </table>
 
             <app-paginator (page)="pageClick($event)" [pageIndex]="paginator.pageIndex" [pageSize]="paginator.pageSize"
-            [totalElements]="paginator.totalElements"></app-paginator>
+                [totalElements]="paginator.totalElements"></app-paginator>
 
         </div>
 
