@@ -7,6 +7,7 @@ import { MatTableModule } from '@angular/material/table';
 import { TypeIncomeListComponent } from './type-income-list.component';
 import { MatButtonModule } from '@angular/material/button';
 import { PaginatorComponentModule } from 'src/app/shared/components/paginator/paginator.component.module';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { PaginatorComponentModule } from 'src/app/shared/components/paginator/pa
     TypeIncomeListRoutingModule,
     MatTableModule,
     MatButtonModule,
+    MatDialogModule,
     PaginatorComponentModule
   ]
 })

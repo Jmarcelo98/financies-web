@@ -11,7 +11,7 @@ const routes: Routes = [
   },
   {
     path: '/:id',
-    loadChildren: () => import('../type-income-view/type-income-view.module').then(m => m.TypeIncomeViewModule)
+    loadChildren: () => import('../type-income-view/type-income-view.module').then(m => m.TypeIncomeViewModule),
   },
 
 ];

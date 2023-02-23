@@ -18,10 +18,18 @@ export class HttpErrorInterceptor implements HttpInterceptor {
                     // Implemente sua msg amigável
                     this.snackBar.showSnackErro('Incorrect email or password');
 
-                } else if (error.status === 405) {
+                }
+
+                else if (error.status === 405) {
                     // Implemente sua msg amigável
                     this.snackBar.showSnackErro('HttpErrorInterceptor: Erro 405');
                 }
+
+                else if (error.status === 400) {
+                    // Implemente sua msg amigável
+                    this.snackBar.showSnackErro(error.error.description);
+                }
+
                 else if (error.status === 409) {
                     this.snackBar.showSnackErro(error.error.description);
                 }
