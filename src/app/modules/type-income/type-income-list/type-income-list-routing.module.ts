@@ -8,11 +8,7 @@ const routes: Routes = [
     path: '',
     component: TypeIncomeListComponent,
     canActivate: [AuthGuardService]
-  },
-  {
-    path: '/:id',
-    loadChildren: () => import('../type-income-view/type-income-view.module').then(m => m.TypeIncomeViewModule),
-  },
+  }
 
 ];
 

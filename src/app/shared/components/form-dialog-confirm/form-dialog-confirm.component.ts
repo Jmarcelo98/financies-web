@@ -11,7 +11,6 @@ export class FormDialogConfirmComponent {
 
   constructor(public dialogRef: MatDialogRef<FormDialogConfirmComponent>,
               @Inject(MAT_DIALOG_DATA) public data: any) {
-    console.log(data);
   }
 
 

@@ -17,16 +17,12 @@ const routes: Routes = [
   {
     path: 'type-income',
     loadChildren: () => import('./modules/type-income/type-income-list/type-income-list.module').then(m => m.TypeIncomeListModule),
-  },
-  {
-    path: 'type-income/:id',
-    loadChildren: () => import('./modules/type-income/type-income-view/type-income-view.module').then(m => m.TypeIncomeViewModule),
   }
-
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule { }
