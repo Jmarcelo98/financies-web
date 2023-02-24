@@ -147,6 +147,10 @@ form mat-label {
     background-color: var(--color-danger-hover);
 }
 
+.btnListTypes {
+    text-align-last: start;
+}
+
 /* CONFIG SNACKS */
 .snack-erro {
     background: var(--color-feedback-negative-light);

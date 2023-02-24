@@ -22,7 +22,7 @@ import { SnackbarComponentModule } from './shared/components/snackbar/snackbar.c
 import { MatIconModule } from '@angular/material/icon';
 import { NgxUiLoaderConfig, NgxUiLoaderHttpConfig, NgxUiLoaderHttpModule, NgxUiLoaderModule, NgxUiLoaderRouterModule, SPINNER } from 'ngx-ui-loader';
 import { AuthInterceptor } from './core/interceptor/auth.interceptor';
-import { ModalAddTypeItemModule } from './shared/components/modal-add-type-item/modal-add-type-item.module';
+import { DialogTypeItemModule } from './shared/components/dialog-type-item/dialog-type-item.module';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   fgsType: SPINNER.fadingCircle,
@@ -57,7 +57,7 @@ const ngxUiHttpLoaderConfig: NgxUiLoaderHttpConfig = {
     NgxUiLoaderRouterModule,
     NgxUiLoaderHttpModule.forRoot(ngxUiHttpLoaderConfig),
     JwtModule.forRoot(jwtConfig),
-    ModalAddTypeItemModule
+    DialogTypeItemModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },

@@ -2,10 +2,6 @@
 
     <div class="demo-button-container">
 
-        <!-- <button mat-raised-button (click)="openDialog('0ms', '0ms')" class="demo-button">
-            <span class="newItem">New income type</span>
-        </button> -->
-
         <button mat-raised-button (click)="addTypeIncome()" class="demo-button">
             <span class="newItem">New income type</span>
         </button>
@@ -25,16 +21,26 @@
 
                 <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
 
-                <ng-container matColumnDef="actionsColumn">
-                    <th mat-header-cell *matHeaderCellDef>Select</th>
+                <ng-container matColumnDef="edit">
+                    <th mat-header-cell *matHeaderCellDef>Edit</th>
                     <td mat-cell *matCellDef="let element">
-                        <button mat-button>
-                            <i class="fi-rr-angle-right"></i>
+                        <button mat-button (click)="edit(element)" class="btnListTypes">
+                            <i class="fi fi-rr-pencil"></i>
                         </button>
                     </td>
                 </ng-container>
 
-                <tr mat-row *matRowDef="let row; columns: displayedColumns;" [routerLink]="[row.id]">
+                <ng-container matColumnDef="delete">
+                    <th mat-header-cell *matHeaderCellDef>Delete</th>
+                    <td mat-cell *matCellDef="let element">
+                        <button mat-button (click)="delete(element.id)" class="btnListTypes">
+                            <i class="fi fi-rr-trash"></i>
+                        </button>
+                    </td>
+                </ng-container>
+
+
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;">
                 </tr>
 
             </table>

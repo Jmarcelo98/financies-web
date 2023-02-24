@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { TypeIncomeService } from 'src/app/shared/services/type-income.service';
 
 @Component({
   selector: 'app-type-income-view',
@@ -8,13 +9,25 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class TypeIncomeViewComponent implements OnInit {
 
-  constructor(private activatedRoute: ActivatedRoute) {
+  constructor(private activatedRoute: ActivatedRoute, private typeIncomeService: TypeIncomeService, private route: Router) {
     this.typeIncomeId = this.activatedRoute.snapshot.params.id;
   }
 
+  typeIncomeId: number = 0;
+
   ngOnInit(): void {
+    this.getTypeIncomeById()
   }
 
-  typeIncomeId: number = 0;
+  getTypeIncomeById() {
+    this.typeIncomeService.getById(this.typeIncomeId).subscribe(res => {
+      console.log(res);
+
+    }, err => {
+      this.route.navigate(['/type-income'])
+      console.log(err);
+
+    })
+  }
 
 }

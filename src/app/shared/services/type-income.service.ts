@@ -30,8 +30,26 @@ export class TypeIncomeService extends BaseService {
     )
   }
 
+  getById(id: number): Observable<any> {
+
+    return this.http.get<any>(`${this.endPoint}/${id}`).pipe(
+      map((response) => {
+        return (response);
+      })
+    )
+  }
+
   create(form: any) {
     return this.http.post(`${this.endPoint}`, form, httpOptions);
   }
+
+  update(form: any) {
+    return this.http.patch(`${this.endPoint}`, form, httpOptions);
+  }
+
+  delete(id: number): Observable<any> {
+    return this.http.delete(`${this.endPoint}/${id}`);
+  }
+
 
 }
