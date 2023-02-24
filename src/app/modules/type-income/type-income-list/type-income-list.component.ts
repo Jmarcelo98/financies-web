@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { DialogTypeItemComponent } from 'src/app/shared/components/dialog-type-item/dialog-type-item.component';
-import { FormDialogComponent } from 'src/app/shared/components/form-dialog-confirm/form-dialog.component';
+import { FormDialogConfirmComponent } from 'src/app/shared/components/form-dialog-confirm/form-dialog-confirm.component';
 import { IPaginator } from 'src/app/shared/components/paginator/paginator.component';
 import { TypeIncomeService } from 'src/app/shared/services/type-income.service';
 
@@ -68,7 +68,7 @@ export class TypeIncomeListComponent implements OnInit {
 
   delete(id: number) {
 
-    const dialogRef = this.dialog.open(FormDialogComponent, {
+    const dialogRef = this.dialog.open(FormDialogConfirmComponent, {
       width: '500px',
       data: {
         title: 'Attention',
