@@ -35,7 +35,7 @@ export class TypeIncomeListComponent implements OnInit {
     })
   }
 
-  addTypeIncome() {
+  create() {
 
     this.dialog.open(DialogTypeItemComponent, {
       width: '500px',
