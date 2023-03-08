@@ -49,8 +49,7 @@ export class TypeExpenseListComponent implements OnInit {
         }
       },
     });
-
-
+    
   }
 
   edit(element:any) {
