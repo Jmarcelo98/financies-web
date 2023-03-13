@@ -12,8 +12,8 @@ export class UserService extends BaseService {
     super("/users");
   }
 
-  // getUser() {
-  //   return this.http.get<>(environment.apiUrl + "users")
-  // }
+  getNamePhoto() {
+    return this.http.get<any>(`${this.endPoint}` + "/name-photo")
+  }
 
 }

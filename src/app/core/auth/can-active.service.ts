@@ -23,13 +23,7 @@ export class AuthGuardService implements CanActivate, CanActivateChild {
             this.snackBar.showSnackErro('User not logged in or expired token');
             return false;
         }
-
-        // if (this.isTokenExpired()) {
-        //     this.router.navigate(['/login'])
-        //     this.snackBar.showSnackErro('Expired access');
-        //     return false;
-        // }
-
+        
         return true;
     }
 

@@ -1,8 +1,10 @@
 import { FlatTreeControl } from '@angular/cdk/tree';
 import { Component, OnInit } from '@angular/core';
 import { MatTreeFlatDataSource, MatTreeFlattener } from '@angular/material/tree';
+import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { TokenStorageService } from './core/auth/token-storage.service';
+import { UserService } from './shared/services/user.service';
 
 interface MenuNode {
   name: string;
@@ -49,12 +51,15 @@ interface ExampleFlatNode {
 export class AppComponent implements OnInit {
 
   nameApp = "Financies";
-  name = "João Marcelo";
 
   isLogged: boolean = false
 
+  userInfo: any;
 
-  constructor(private tokenStorageService: TokenStorageService, private router: Router) {
+  userImage: any;
+
+  constructor(private tokenStorageService: TokenStorageService, private router: Router,
+    private userService: UserService, private sanitizer: DomSanitizer) {
     this.dataSource.data = TREE_DATA;
   }
 
@@ -62,6 +67,30 @@ export class AppComponent implements OnInit {
 
     if (this.tokenStorageService.getToken()) {
       this.isLogged = true;
+      this.getUserNamePhoto();
+    }
+
+  }
+
+  getUserNamePhoto() {
+    this.userService.getNamePhoto().subscribe(res => {
+      this.userInfo = res;
+      this.renderImage();
+    }, err => {
+      console.log(err);
+    })
+  }
+
+  renderImage() {
+
+    console.log(this.userInfo);
+
+
+    if (this.userInfo.photo == null) {
+      this.userImage = './assets/images/defaultUser.png';
+    } else {
+      let objectURL = 'data:image/png;base64,' + this.userInfo.photo;
+      this.userImage = this.sanitizer.bypassSecurityTrustUrl(objectURL);
     }
 
   }
