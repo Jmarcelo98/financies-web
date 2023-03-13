@@ -1,0 +1,53 @@
+<div class="page-container" id="type-expense-list">
+
+    <div class="demo-button-container">
+
+        <button mat-raised-button (click)="createTypeExpense()" class="demo-button"> 
+            <span class="newItem">New Expense Type</span>
+        </button>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-12">
+
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+                <ng-container matColumnDef="description">
+                    <th mat-header-cell *matHeaderCellDef>Description</th>
+                    <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+
+                <ng-container matColumnDef="edit">
+                    <th mat-header-cell *matHeaderCellDef>Edit</th>
+                    <td mat-cell *matCellDef="let element">
+                        <button mat-button (click)="edit(element)" class="btnListTypes">
+                            <i class="fi fi-rr-pencil"></i>
+                        </button>
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="delete">
+                    <th mat-header-cell *matHeaderCellDef>Delete</th>
+                    <td mat-cell *matCellDef="let element">
+                        <button mat-button (click)="delete(element.id)" class="btnListTypes">
+                            <i class="fi fi-rr-trash"></i>
+                        </button>
+                    </td>
+                </ng-container>
+
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+                </tr>
+
+            </table>
+            
+            <app-paginator (page)="pageClick($event)" [pageIndex]="paginator.pageIndex" [pageSize]="paginator.pageSize"
+                [totalElements]="paginator.totalElements"></app-paginator>
+
+        </div>
+
+    </div>
+</div>
