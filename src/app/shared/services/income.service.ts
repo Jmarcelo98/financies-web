@@ -13,26 +13,17 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
-export class TypeIncomeService extends BaseService {
+export class IncomeService extends BaseService {
 
   constructor(private http: HttpClient) {
-    super("/types-income");
+    super("/incomes");
   }
 
-  getAllPageable(page: IPaginator): Observable<any> {
+  getAll(page: IPaginator): Observable<any> {
 
     var params = this.setPageToHttpParam(page)
 
     return this.http.get<any>(`${this.endPoint}`, { params: params }).pipe(
-      map((response) => {
-        return (response);
-      })
-    )
-  }
-
-  getAll(): Observable<any> {
-
-    return this.http.get<any>(`${this.endPoint}/all`).pipe(
       map((response) => {
         return (response);
       })

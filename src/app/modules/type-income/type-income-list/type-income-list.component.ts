@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { Router } from '@angular/router';
 import { DialogTypeItemComponent } from 'src/app/shared/components/dialog-type-item/dialog-type-item.component';
 import { FormDialogConfirmComponent } from 'src/app/shared/components/form-dialog-confirm/form-dialog-confirm.component';
 import { IPaginator } from 'src/app/shared/components/paginator/paginator.component';
@@ -13,7 +12,7 @@ import { TypeIncomeService } from 'src/app/shared/services/type-income.service';
 })
 export class TypeIncomeListComponent implements OnInit {
 
-  constructor(private typeIncomeService: TypeIncomeService, public dialog: MatDialog, private router: Router) { }
+  constructor(private typeIncomeService: TypeIncomeService, public dialog: MatDialog) { }
 
   paginator: IPaginator = {
     pageIndex: 0,
@@ -28,7 +27,7 @@ export class TypeIncomeListComponent implements OnInit {
   }
 
   getAll() {
-    this.typeIncomeService.getAll(this.paginator).subscribe(res => {
+    this.typeIncomeService.getAllPageable(this.paginator).subscribe(res => {
       this.paginator.pageIndex = res.number;
       this.paginator.totalElements = res.totalElements;
       this.dataSource = res.content;
@@ -95,6 +94,5 @@ export class TypeIncomeListComponent implements OnInit {
   }
 
   public displayedColumns: string[] = ['description', 'edit', 'delete'];
-
 
 }

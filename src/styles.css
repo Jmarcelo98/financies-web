@@ -18,6 +18,7 @@
     --color-btn-add: #3f51b529;
     --color-danger: #b53f3f;
     --color-danger-hover: #b84d4de2;
+    /* --color-brand-primary-down: #1944B8; */
 
     /* NEUTRALS */
     --color-neutral-dark-up: #27314A;
@@ -26,7 +27,7 @@
     --color-neutral-medium-up: #AFBAD7;
     --color-neutral-medium-down: #EEEFF3;
     --color-neutral-light: #FFFFFF;
-    --color-neutral-light-up: #F7F8F9;
+    --color-neutral-light-up: #fbfbfb;
 
 
     /* FONT-SIZES */
@@ -63,6 +64,135 @@
 /* GLOBAL */
 .newItem {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.page-container {
+    padding: 32px;
+    /* background: var(--color-primary-hover); */
+    background: var(--color-neutral-light-up);
+}
+
+.page-container .container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* TYPOGRAPHY */
+p.typography {
+    margin-bottom: 0;
+}
+
+.typography.ellipsis {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    /* "overflow" value must be different from "visible" */
+}
+
+.typography.primary {
+    color: var(--color-brand-primary);
+}
+
+.typography.dark-up {
+    color: var(--color-neutral-dark-up);
+}
+
+.typography.dark-down {
+    color: var(--color-neutral-dark-down);
+}
+
+.typography.neutral-light {
+    color: var(--color-neutral-light);
+}
+
+.typography.medium-up {
+    color: var(--color-neutral-medium-up);
+}
+
+.typography.headlines {
+    margin: 0;
+}
+
+.typography.headlines.h1 {
+    font-size: var(--font-size-6xl);
+    font-weight: var(--font-weight-black);
+}
+
+.typography.headlines.h2 {
+    font-size: var(--font-size-5xl);
+    font-weight: var(--font-weight-black);
+}
+
+.typography.headlines.h3 {
+    font-size: var(--font-size-4xl);
+    font-weight: var(--font-weight-regular);
+}
+
+.typography.headlines.h4 {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-medium);
+}
+
+.typography.headlines.h5 {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+}
+
+.typography.headlines.h6 {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+}
+
+.typography.body {
+    font-weight: var(--font-weight-regular);
+}
+
+.typography.body.subtitle {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-medium);
+}
+
+.typography.body.body-lg {
+    font-size: var(--font-size-lg);
+}
+
+.typography.body.body-md {
+    font-size: var(--font-size-md);
+}
+
+.typography.body.body-sm {
+    font-size: var(--font-size-sm);
+}
+
+.typography.body.body-2xs {
+    font-size: var(--font-size-2xs);
+}
+
+.typography.utility.button-md {
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-bold);
+}
+
+.typography.utility.button-sm {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-bold);
+}
+
+.typography.utility.label {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-regular);
+}
+
+.typography.utility.caption {
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-regular);
+}
+
+.block {
+    display: block;
 }
 
 
@@ -115,6 +245,11 @@ form mat-label {
 
 
 /* CONFIG BUTTONS */
+.ds-button {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-bold);
+}
+
 .ds-button-primary {
     background: var(--color-primary);
     color: white;
@@ -198,4 +333,13 @@ form mat-label {
 
 #confirm-dialog .span-title {
     margin-right: 40px;
+}
+
+/* TABLE */
+.striped .mat-row:nth-child(even) {
+    background-color: rgb(255, 255, 255);
+}
+
+.striped .mat-row:nth-child(odd) {
+    background-color: var(--color-neutral-medium-down);
 }
