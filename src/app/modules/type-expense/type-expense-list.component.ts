@@ -4,7 +4,8 @@ import { Router } from '@angular/router';
 import { DialogTypeItemComponent } from 'src/app/shared/components/dialog-type-item/dialog-type-item.component';
 import { FormDialogConfirmComponent } from 'src/app/shared/components/form-dialog-confirm/form-dialog-confirm.component';
 import { IPaginator } from 'src/app/shared/components/paginator/paginator.component';
-import { TypeExpenseService } from '../shared/services/type-expense.service';
+import { TypeExpenseService } from 'src/app/shared/services/type-expense.service';
+
 
 @Component({
   selector: 'app-type-expense-list',

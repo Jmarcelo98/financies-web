@@ -24,7 +24,7 @@ const routes: Routes = [
   },
   {
     path: 'type-expense',
-    loadChildren: () => import('./type-expense/type-expense-list.module').then(m => m.TypeExpenseListModule),
+    loadChildren: () => import('./modules/type-expense/type-expense-list.module').then(m => m.TypeExpenseListModule),
   },
 ];
 

@@ -4,10 +4,10 @@ import { CommonModule } from '@angular/common';
 import { TypeExpenseListRoutingModule } from './type-expense-list-routing.module';
 
 import { TypeExpenseListComponent } from './type-expense-list.component';
-import { PaginatorComponentModule } from "../shared/components/paginator/paginator.component.module";
 import { MatTableModule } from '@angular/material/table'  
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
+import { PaginatorComponentModule } from 'src/app/shared/components/paginator/paginator.component.module';
 
 @NgModule({
     declarations: [
