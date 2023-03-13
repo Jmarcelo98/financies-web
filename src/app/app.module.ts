@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -24,6 +24,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { NgxUiLoaderConfig, NgxUiLoaderHttpConfig, NgxUiLoaderHttpModule, NgxUiLoaderModule, NgxUiLoaderRouterModule, SPINNER } from 'ngx-ui-loader';
 import { AuthInterceptor } from './core/interceptor/auth.interceptor';
 import { DialogTypeItemModule } from './shared/components/dialog-type-item/dialog-type-item.module';
+import { registerLocaleData } from '@angular/common';
+import ptBr from '@angular/common/locales/pt';
+import { CurrencyMaskInputMode, NgxCurrencyModule, } from 'ngx-currency';
+import { MatSelectModule } from '@angular/material/select';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   fgsType: SPINNER.fadingCircle,
@@ -36,11 +40,29 @@ const ngxUiHttpLoaderConfig: NgxUiLoaderHttpConfig = {
   delay: 200, showForeground: true
 };
 
+export const customCurrencyMaskConfig = {
+  align: "left",
+  allowNegative: true,
+  allowZero: true,
+  decimal: ",",
+  precision: 2,
+  prefix: "R$ ",
+  suffix: "",
+  thousands: ".",
+  nullable: true,
+  min: null,
+  max: null,
+  inputMode: CurrencyMaskInputMode.FINANCIAL
+};
+
+registerLocaleData(ptBr);
+
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
+    NgxCurrencyModule.forRoot(customCurrencyMaskConfig),
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -58,11 +80,13 @@ const ngxUiHttpLoaderConfig: NgxUiLoaderHttpConfig = {
     NgxUiLoaderRouterModule,
     NgxUiLoaderHttpModule.forRoot(ngxUiHttpLoaderConfig),
     JwtModule.forRoot(jwtConfig),
-    DialogTypeItemModule
+    DialogTypeItemModule,
+    MatSelectModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    { provide: LOCALE_ID, useValue: 'pt' },
   ],
   bootstrap: [AppComponent]
 })

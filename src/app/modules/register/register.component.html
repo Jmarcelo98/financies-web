@@ -1,78 +1,80 @@
-<div class="row row-center">
+<div class="page-container">
+    <div class="row row-center">
 
-    <div class="col-12 col-md-10">
-
-        <mat-card class="example-card">
-            <mat-card-header>
-                <mat-card-title-group>
-                    <mat-card-title>Register</mat-card-title>
-                </mat-card-title-group>
-            </mat-card-header>
-
-            <mat-card-content>
-
-                <form [formGroup]="formRegister">
-
-                    <div class="row">
-
-                        <div class="col-12 col-md-12 col-lg-5">
-                            <mat-label>E-mail</mat-label>
-                            <mat-form-field class="full-width" appearance="outline">
-                                <i matPrefix class="fi fi-rr-envelope mr"></i>
-                                <input matInput name="email" email type="email" formControlName="email"
-                                    placeholder="Ex. financies@example.com">
-                            </mat-form-field>
+        <div class="col-12 col-md-10">
+    
+            <mat-card class="example-card">
+                <mat-card-header>
+                    <mat-card-title-group>
+                        <mat-card-title>Register</mat-card-title>
+                    </mat-card-title-group>
+                </mat-card-header>
+    
+                <mat-card-content>
+    
+                    <form [formGroup]="formRegister">
+    
+                        <div class="row">
+    
+                            <div class="col-12 col-md-12 col-lg-5">
+                                <mat-label>E-mail</mat-label>
+                                <mat-form-field class="full-width" appearance="outline">
+                                    <i matPrefix class="fi fi-rr-envelope mr"></i>
+                                    <input matInput name="email" email type="email" formControlName="email"
+                                        placeholder="Ex. financies@example.com">
+                                </mat-form-field>
+                            </div>
+    
+                            <div class="col-12 col-md-6 col-lg-3 ">
+                                <mat-label>Password</mat-label>
+                                <mat-form-field class="full-width" appearance="outline">
+    
+                                    <button mat-icon-button matSuffix (click)="hide = !hide"
+                                        [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                    </button>
+    
+                                    <input matInput [type]="hide ? 'password' : 'text' " formControlName="password">
+                                </mat-form-field>
+                            </div>
+    
+                            <div class="col-12 col-md-6 col-lg-3 ">
+                                <mat-label>Confirm Password</mat-label>
+                                <mat-form-field class="full-width" appearance="outline">
+    
+                                    <button mat-icon-button matSuffix (click)="hideConfirm = !hideConfirm"
+                                        [attr.aria-label]="'Hide confirm password'" [attr.aria-pressed]="hideConfirm">
+                                        <mat-icon>{{hideConfirm ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                    </button>
+    
+                                    <input matInput [type]="hideConfirm ? 'password' : 'text' "
+                                        formControlName="passwordConfirm">
+                                </mat-form-field>
+                            </div>
+    
+    
                         </div>
-
-                        <div class="col-12 col-md-6 col-lg-3 ">
-                            <mat-label>Password</mat-label>
-                            <mat-form-field class="full-width" appearance="outline">
-
-                                <button mat-icon-button matSuffix (click)="hide = !hide"
-                                    [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    
+                        <div class="row">
+    
+                            <div class="col-12">
+    
+                                <button mat-button type="button" class="ds-button-primary" (click)="register()">
+                                    <i class="fi fi-rr-check"> </i>Register
                                 </button>
-
-                                <input matInput [type]="hide ? 'password' : 'text' " formControlName="password">
-                            </mat-form-field>
+    
+                            </div>
+    
                         </div>
-
-                        <div class="col-12 col-md-6 col-lg-3 ">
-                            <mat-label>Confirm Password</mat-label>
-                            <mat-form-field class="full-width" appearance="outline">
-
-                                <button mat-icon-button matSuffix (click)="hideConfirm = !hideConfirm"
-                                    [attr.aria-label]="'Hide confirm password'" [attr.aria-pressed]="hideConfirm">
-                                    <mat-icon>{{hideConfirm ? 'visibility_off' : 'visibility'}}</mat-icon>
-                                </button>
-
-                                <input matInput [type]="hideConfirm ? 'password' : 'text' "
-                                    formControlName="passwordConfirm">
-                            </mat-form-field>
-                        </div>
-
-
-                    </div>
-
-                    <div class="row">
-
-                        <div class="col-12">
-
-                            <button mat-button type="button" class="ds-button-primary" (click)="register()">
-                                <i class="fi fi-rr-check"> </i>Register
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </form>
-
-
-            </mat-card-content>
-
-        </mat-card>
-
+    
+                    </form>
+    
+    
+                </mat-card-content>
+    
+            </mat-card>
+    
+        </div>
+    
     </div>
-
 </div>
