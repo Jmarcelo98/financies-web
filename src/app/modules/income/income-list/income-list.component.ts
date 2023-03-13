@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { IPaginator } from 'src/app/shared/components/paginator/paginator.component';
 import { IncomeService } from 'src/app/shared/services/income.service';
 
@@ -10,6 +11,10 @@ import { IncomeService } from 'src/app/shared/services/income.service';
 export class IncomeListComponent implements OnInit {
 
   constructor(private incomeService: IncomeService) { }
+
+  formFilter = new FormGroup({
+    dateReference: new FormControl(null, []),
+  });
 
   paginator: IPaginator = {
     pageIndex: 0,

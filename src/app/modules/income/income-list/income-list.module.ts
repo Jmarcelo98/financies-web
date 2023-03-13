@@ -7,6 +7,11 @@ import { PaginatorComponentModule } from 'src/app/shared/components/paginator/pa
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
+import { MatSelectModule } from '@angular/material/select';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -15,10 +20,15 @@ import { MatTableModule } from '@angular/material/table';
   imports: [
     CommonModule,
     IncomeListRoutingModule,
+    MatFormFieldModule,
+    MatInputModule,
     MatTableModule,
     MatButtonModule,
     MatDialogModule,
-    PaginatorComponentModule
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    PaginatorComponentModule,
   ]
 })
 export class IncomeListModule { }

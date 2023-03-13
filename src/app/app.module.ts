@@ -80,8 +80,7 @@ registerLocaleData(ptBr);
     NgxUiLoaderRouterModule,
     NgxUiLoaderHttpModule.forRoot(ngxUiHttpLoaderConfig),
     JwtModule.forRoot(jwtConfig),
-    DialogTypeItemModule,
-    MatSelectModule
+    DialogTypeItemModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },

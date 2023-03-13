@@ -1,5 +1,21 @@
 <div class="page-container" id="type-income-list">
 
+
+    <div class="row">
+
+        <h4>Filter</h4>
+
+        <div class="col-4">
+            <mat-label>Reference Date </mat-label>
+            <mat-form-field class="full-width" appearance="outline">
+                <input matInput formControlName="dateReference" [matDatepicker]="picker3">
+                <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+                <mat-datepicker #picker3 startView="month"></mat-datepicker>
+            </mat-form-field>
+        </div>
+
+    </div>
+
     <div class="demo-button-container">
 
         <!-- <button mat-raised-button (click)="create()" class="demo-button">

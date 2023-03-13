@@ -23,6 +23,7 @@ export class FormControlExceptionDirective implements OnInit {
             maxlength: 'Quantidade de máxima de caracteres inválida',
             nonIdenticalEmail: 'E-mail e confirmação estão diferentes',
             nonIdenticalPassword: 'Password and confirmation are different',
+            valueNotGreaterZero: 'Value must be greater than zero',
             searchCep: 'Realize a consulta de CEP',
             cepInvalido: 'Cep Inválido',
         };

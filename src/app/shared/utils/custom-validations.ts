@@ -7,6 +7,20 @@ import { AbstractControl, ValidatorFn, FormGroup, ValidationErrors } from '@angu
 
 export class CustomValidations {
 
+    static checkValueGreaterThanZero: ValidatorFn = (group: AbstractControl): ValidationErrors | null => {
+
+        const value = group.get('value').value;
+
+        if (value > 0) {
+            return null;
+        }
+        else {
+            group.get('value').setErrors({ valueNotGreaterZero: true })
+            return { valueNotGreaterZero: true };
+        }
+
+    }
+
     // fullNameValitator = '^[A-Za-zÀ-ÿ]+\\s([A-Za-zÀ-ÿ]\\s?)*[A-Za-zÀ-ÿ]$';
     static fullNameValitator = '.+\\s.+';  // palavra + spaco + palavra
     static birthdateValidator = '^(0[1-9]|[1-2][0-9]|3[0-1])\\/(0[1-9]|1[0-2])\\/(19[4-9]\\d|20[0-1][0-9]|20[2][0-2])$';
@@ -24,6 +38,8 @@ export class CustomValidations {
             return { nonIdenticalEmail: true };
         }
     };
+
+ 
 
     static checkPassword: ValidatorFn = (group: AbstractControl): ValidationErrors | null => {
         const password = group.get('password').value;

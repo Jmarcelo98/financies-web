@@ -55,7 +55,7 @@ export class DialogTypeItemComponent implements OnInit {
     if (this.formType.valid) {
 
       this.typeIncomeService.update(this.formType.getRawValue()).subscribe(suc => {
-        this.showSnackSucesso('Type of recipe successfully updated');
+        this.showSnackSucesso('Type of income successfully updated');
         this.dialogRef.close()
         setTimeout(() => {
           window.location.reload();

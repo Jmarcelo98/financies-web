@@ -1,6 +1,5 @@
 <div id="income-edit-page" class="page-container">
 
-
     <form [formGroup]="formPage">
 
         <div class="row mt-3">
@@ -22,32 +21,35 @@
 
         <div class="row mt-3">
 
-            <div class="col-4">
+            <div class="col-5">
                 <mat-label>Type Income</mat-label>
-                <mat-form-field class="full-width" appearance="outline" >
-                    
-                    <mat-select formControlName="typeIncome">
-                        <mat-option *ngFor="let item of typesIncome" [value]="item">
-                          {{item.description}}
-                        </mat-option>
-                      </mat-select>
-
-                </mat-form-field>
-            </div>
-
-            <div class="col-4">
-                <mat-label>Is Received</mat-label>
                 <mat-form-field class="full-width" appearance="outline">
-                    <i matPrefix class="fi fi-rr-envelope mr"></i>
-                    <input matInput type="text" formControlName="isReceived" placeholder="Ex. pat@example.com">
+
+                    <mat-select formControlName="typeIncome"
+                        [placeholder]="this.formPage.value.typeIncome?.description">
+                        <mat-option *ngFor="let item of typesIncome" [value]="item">
+                            {{item.description}}
+                        </mat-option>
+                    </mat-select>
+
                 </mat-form-field>
             </div>
+
+            <div class="col-5">
+                <mat-label class="label block labelOutMatFormField">Is Received</mat-label>
+                <!-- <span class="typography utility label dark-down block mb-3">Is Received</span> -->
+                <mat-radio-group formControlName="isReceived">
+                    <mat-radio-button [value]="true" class="radioRight">Yes</mat-radio-button>
+                    <mat-radio-button [value]="false">No</mat-radio-button>
+                </mat-radio-group>
+            </div>
+
         </div>
 
         <div class="row mt-5 ">
             <div class="col-12 d-flex">
-                <button mat-button class="btn ds-button ds-button-primary mr" (click)="edit()"><i
-                        class="fi fi-rr-pencil"></i>Edit</button>
+                <button mat-button class="btn ds-button ds-button-primary mr" (click)="update()"><i
+                        class="fi fi-rr-pencil"></i>Update</button>
             </div>
         </div>
 

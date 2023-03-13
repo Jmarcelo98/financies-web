@@ -68,7 +68,6 @@
 
 .page-container {
     padding: 32px;
-    /* background: var(--color-primary-hover); */
     background: var(--color-neutral-light-up);
 }
 
@@ -81,38 +80,37 @@
 
 
 /* TYPOGRAPHY */
-p.typography {
+/* p.typography {
     margin-bottom: 0;
-}
+} */
 
-.typography.ellipsis {
+/* .typography.ellipsis {
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    /* "overflow" value must be different from "visible" */
-}
+} */
 
-.typography.primary {
+/* .typography.primary {
     color: var(--color-brand-primary);
-}
+} */
 
-.typography.dark-up {
+/* .typography.dark-up {
     color: var(--color-neutral-dark-up);
-}
+} */
 
 .typography.dark-down {
     color: var(--color-neutral-dark-down);
 }
-
+/* 
 .typography.neutral-light {
     color: var(--color-neutral-light);
-}
+} */
 
-.typography.medium-up {
+/* .typography.medium-up {
     color: var(--color-neutral-medium-up);
-}
+} */
 
-.typography.headlines {
+/* .typography.headlines {
     margin: 0;
 }
 
@@ -144,11 +142,11 @@ p.typography {
 .typography.headlines.h6 {
     font-size: var(--font-size-xl);
     font-weight: var(--font-weight-bold);
-}
+} */
 
-.typography.body {
+/* .typography.body {
     font-weight: var(--font-weight-regular);
-}
+} */
 
 .typography.body.subtitle {
     font-size: var(--font-size-xl);

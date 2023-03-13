@@ -83,9 +83,6 @@ export class AppComponent implements OnInit {
 
   renderImage() {
 
-    console.log(this.userInfo);
-
-
     if (this.userInfo.photo == null) {
       this.userImage = './assets/images/defaultUser.png';
     } else {

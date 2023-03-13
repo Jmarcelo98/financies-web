@@ -44,6 +44,8 @@ export class IncomeService extends BaseService {
   }
 
   update(form: any) {
+    console.log(form);
+    
     return this.http.patch(`${this.endPoint}`, form, httpOptions);
   }
 
