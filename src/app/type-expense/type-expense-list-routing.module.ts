@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthGuardService } from 'src/app/core/auth/can-active.service';
-import { TypeIncomeViewComponent } from './type-income-view.component';
+import { AuthGuardService } from '../core/auth/can-active.service';
+import { TypeExpenseListComponent } from './type-expense-list.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: TypeIncomeViewComponent,
+    component: TypeExpenseListComponent,
     canActivate: [AuthGuardService]
   }
 
@@ -16,4 +16,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class TypeIncomeViewRoutingModule { }
+export class TypeExpenseListRoutingModule { }

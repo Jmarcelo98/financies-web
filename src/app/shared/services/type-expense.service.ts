@@ -9,47 +9,44 @@ const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 
-
 @Injectable({
   providedIn: 'root'
 })
-export class TypeIncomeService extends BaseService {
+export class TypeExpenseService extends BaseService {
 
   constructor(private http: HttpClient) {
-    super("/types-income");
-  }
+    super("/type-expenses");
+   }
 
-  getAll(page: IPaginator): Observable<any> {
+   getAllTypeExpenses(page: IPaginator): Observable<any> {
 
     var params = this.setPageToHttpParam(page)
 
-    return this.http.get<any>(`${this.endPoint}`, { params: params }).pipe(
+    return this.http.get<any>(`${this.endPoint}`, {params: params}).pipe(
       map((response) => {
         return (response);
       })
     )
-  }
+   }
 
-  getById(id: number): Observable<any> {
-
+   getById(id: number): Observable<any> {
+    
     return this.http.get<any>(`${this.endPoint}/${id}`).pipe(
-      map((response) => {
+      map((response) =>{
         return (response);
       })
     )
   }
-
-  create(form: any) {
+  
+  createTypeExpense(form: any) {
     return this.http.post(`${this.endPoint}`, form, httpOptions);
   }
 
-  update(form: any) {
+  updateTypeExpense(form: any){
     return this.http.patch(`${this.endPoint}`, form, httpOptions);
   }
 
-  delete(id: number): Observable<any> {
+  deleteTypeExpense(id: number): Observable<any> {
     return this.http.delete(`${this.endPoint}/${id}`);
   }
-
-
 }

@@ -1,0 +1,23 @@
+table {
+    width: 100%;
+}
+
+.row {
+    justify-content: center;
+}
+
+.demo-table {
+    width: 100%;
+}
+
+.demo-button {
+    background-color: var(--color-btn-add);
+}
+
+.demo-button-container {
+    padding-bottom: 16px;
+}
+
+.demo-button+.demo-button {
+    margin-left: 8px;
+}

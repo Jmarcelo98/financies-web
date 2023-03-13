@@ -19,14 +19,14 @@ const routes: Routes = [
     loadChildren: () => import('./modules/type-income/type-income-list/type-income-list.module').then(m => m.TypeIncomeListModule),
   },
   {
-    path: 'type-income/:id',
-    loadChildren: () => import('./modules/type-income/type-income-view/type-income-view.module').then(m => m.TypeIncomeViewModule),
+    path: 'type-expense',
+    loadChildren: () => import('./type-expense/type-expense-list.module').then(m => m.TypeExpenseListModule),
   }
-
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule { }

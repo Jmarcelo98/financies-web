@@ -1,9 +1,9 @@
-<div class="page-container" id="type-income-list">
+<div class="page-container" id="type-expense-list">
 
     <div class="demo-button-container">
 
-        <button mat-raised-button (click)="create()" class="demo-button">
-            <span class="newItem">New income type</span>
+        <button mat-raised-button (click)="createTypeExpense()" class="demo-button"> 
+            <span class="newItem">New Expense Type</span>
         </button>
 
     </div>
@@ -39,12 +39,11 @@
                     </td>
                 </ng-container>
 
-
                 <tr mat-row *matRowDef="let row; columns: displayedColumns;">
                 </tr>
 
             </table>
-
+            
             <app-paginator (page)="pageClick($event)" [pageIndex]="paginator.pageIndex" [pageSize]="paginator.pageSize"
                 [totalElements]="paginator.totalElements"></app-paginator>
 

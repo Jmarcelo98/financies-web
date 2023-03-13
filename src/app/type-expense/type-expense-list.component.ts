@@ -4,16 +4,16 @@ import { Router } from '@angular/router';
 import { DialogTypeItemComponent } from 'src/app/shared/components/dialog-type-item/dialog-type-item.component';
 import { FormDialogConfirmComponent } from 'src/app/shared/components/form-dialog-confirm/form-dialog-confirm.component';
 import { IPaginator } from 'src/app/shared/components/paginator/paginator.component';
-import { TypeIncomeService } from 'src/app/shared/services/type-income.service';
+import { TypeExpenseService } from '../shared/services/type-expense.service';
 
 @Component({
-  selector: 'app-type-income-list',
-  templateUrl: './type-income-list.component.html',
-  styleUrls: ['./type-income-list.component.css']
+  selector: 'app-type-expense-list',
+  templateUrl: './type-expense-list.component.html',
+  styleUrls: ['./type-expense-list.component.css']
 })
-export class TypeIncomeListComponent implements OnInit {
+export class TypeExpenseListComponent implements OnInit {
 
-  constructor(private typeIncomeService: TypeIncomeService, public dialog: MatDialog, private router: Router) { }
+  constructor(private typeExpenseService: TypeExpenseService, public dialog: MatDialog, private router: Router) { }
 
   paginator: IPaginator = {
     pageIndex: 0,
@@ -23,56 +23,57 @@ export class TypeIncomeListComponent implements OnInit {
 
   dataSource: any;
 
+
   ngOnInit(): void {
-    this.getAll()
+    this.getAllTypeExpenses()
   }
 
-  getAll() {
-    this.typeIncomeService.getAll(this.paginator).subscribe(res => {
+  getAllTypeExpenses() {
+    this.typeExpenseService.getAllTypeExpenses(this.paginator).subscribe(res => {
       this.paginator.pageIndex = res.number;
       this.paginator.totalElements = res.totalElements;
       this.dataSource = res.content;
     })
   }
 
-  create() {
+  createTypeExpense() {
 
     this.dialog.open(DialogTypeItemComponent, {
       width: '500px',
       data: {
         objectEdit: null,
-        isIncome: true,
-        title: 'Add income type',
+        isExpense: true,
+        title: 'Add expense type',
         buttons: {
           primary: 'Create',
         }
       },
     });
-
+    
   }
 
-  edit(element: any) {
+  edit(element:any) {
     this.dialog.open(DialogTypeItemComponent, {
       width: '500px',
       data: {
         objectEdit: element,
-        isIncome: true,
-        title: 'Edit income type',
+        isExpense: true,
+        title: 'Edit expense type',
         buttons: {
-          primary: 'Update', // Se quiser mudar o texto do botão, basta adicionar no objeto
-          secondary: 'Cancel', // Se quiser mudar o texto do botão, basta adicionar no objeto
+          primary: 'Update',
+          secondary: 'Cancel'
         }
       },
     });
   }
 
-  delete(id: number) {
+  delete(id: number){
 
     const dialogRef = this.dialog.open(FormDialogConfirmComponent, {
       width: '500px',
       data: {
         title: 'Attention',
-        text: 'Do you really want to delete this type of income?',
+        text: 'Do you really want to delete this type of expense CARALHO?',
         buttons: {
           primary: 'Yes',
           secondary: 'No',
@@ -81,8 +82,8 @@ export class TypeIncomeListComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(data => {
-      if (data.primary) {
-        this.typeIncomeService.delete(id).subscribe(ret => {
+      if(data.primary) {
+        this.typeExpenseService.deleteTypeExpense(id).subscribe(ret => {
           window.location.reload();
         })
       }
@@ -91,10 +92,11 @@ export class TypeIncomeListComponent implements OnInit {
 
   public pageClick(paginator?: IPaginator) {
     this.paginator = paginator;
-    this.getAll();
+    this.getAllTypeExpenses;
   }
 
   public displayedColumns: string[] = ['description', 'edit', 'delete'];
+
 
 
 }
