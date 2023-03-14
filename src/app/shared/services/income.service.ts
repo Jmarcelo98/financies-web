@@ -19,11 +19,11 @@ export class IncomeService extends BaseService {
     super("/incomes");
   }
 
-  getAll(page: IPaginator): Observable<any> {
+  getAllByFilter(form: any, page: IPaginator): Observable<any> {
 
     var params = this.setPageToHttpParam(page)
 
-    return this.http.get<any>(`${this.endPoint}`, { params: params }).pipe(
+    return this.http.post<any>(`${this.endPoint}/filter/pageable`, form, { params: params }).pipe(
       map((response) => {
         return (response);
       })
@@ -45,7 +45,7 @@ export class IncomeService extends BaseService {
 
   update(form: any) {
     console.log(form);
-    
+
     return this.http.patch(`${this.endPoint}`, form, httpOptions);
   }
 

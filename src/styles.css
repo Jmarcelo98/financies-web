@@ -15,7 +15,8 @@
     --color-btn-add: #3f51b54a;
     --color-btn-search: #6d86ff21;
     --color-btn-search-hover: #1168eb66;
-
+    --color-btn-clear: #eb111166;
+    --color-btn-clear-hover: #eb0404a1;
 
     /* TOOLBAR */
     --shadow-toolbar: 0px 2px 10px 0px #00800063;
@@ -124,6 +125,17 @@
 
 .btn-search:hover {
     background-color: var(--color-btn-search-hover);
+}
+
+/* btn clear */
+.btn-clear {
+    margin-top: 25px !important;
+    background-color: var(--color-btn-clear);
+}
+
+.btn-clear:hover {
+    flex: 1 1 auto;
+    background-color: var(--color-btn-clear-hover);
 }
 
 /* span title */
