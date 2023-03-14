@@ -4,6 +4,7 @@ import { IPaginator } from 'src/app/shared/components/paginator/paginator.compon
 import { IncomeService } from 'src/app/shared/services/income.service';
 import { TypeIncomeService } from 'src/app/shared/services/type-income.service';
 
+
 @Component({
   selector: 'app-income-list',
   templateUrl: './income-list.component.html',
