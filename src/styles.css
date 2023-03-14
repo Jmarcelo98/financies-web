@@ -169,6 +169,15 @@
     display: block;
 }
 
+.result-filter-list {
+    margin-top: 50px;
+}
+
+.not-found-list {
+    font-size: var(--font-size-lgg);
+    font-style: italic;
+}
+
 /* CONFIG CARD */
 mat-card-title {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;

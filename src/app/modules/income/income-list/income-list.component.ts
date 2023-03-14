@@ -41,6 +41,8 @@ export class IncomeListComponent implements OnInit {
     }
 
     this.incomeService.getAllByFilter(this.formFilter.getRawValue(), this.paginator).subscribe(res => {
+      console.log(res.content);
+      
       this.paginator.pageIndex = res.number;
       this.paginator.totalElements = res.totalElements;
       this.dataSource = res.content;
