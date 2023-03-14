@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { SnackbarProvider } from '../../provider/snackbar.provider';
 import { TypeIncomeService } from '../../services/type-income.service';
+import { TypeExpenseService } from '../../services/type-expense.service';
 
 @Component({
   selector: 'app-dialog-type-item',
@@ -12,7 +13,7 @@ import { TypeIncomeService } from '../../services/type-income.service';
 export class DialogTypeItemComponent implements OnInit {
 
   constructor(public dialogRef: MatDialogRef<DialogTypeItemComponent>, private snackBar: SnackbarProvider, @Inject
-    (MAT_DIALOG_DATA) public data: any, private typeIncomeService: TypeIncomeService) {
+    (MAT_DIALOG_DATA) public data: any, private typeIncomeService: TypeIncomeService, private typeExpenseService: TypeExpenseService) {
   }
 
   ngOnInit(): void {
@@ -71,10 +72,39 @@ export class DialogTypeItemComponent implements OnInit {
   // type expense
   editTypeExpense() {
 
-  }
+    if (this.formType.valid){
 
+      this.typeExpenseService.updateTypeExpense(this.formType.getRawValue()).subscribe(suc => {
+        this.showSnackSucesso('Type of expense succesfully updated');
+        this.dialogRef.close()
+        setTimeout(() => {
+          window.location.reload();
+        }, 1200);
+      }, err => {
+        console.log(err);
+      })
+    } else {
+      this.validaCampos(this.formType)
+    }
+  }
+  
+  //add type expense
   addTypeExpense() {
-    console.log("b");
+
+    if (this.formType.valid) {
+
+      this.typeExpenseService.createTypeExpense(this.formType.getRawValue()).subscribe(suc => {
+        this.showSnackSucesso('Type of expense succesfully registered');
+        this.dialogRef.close()
+
+        setTimeout(() => {
+          window.location.reload();
+        }, 1200)
+      }, err => {
+        console.log(err);
+      })
+      
+    }
   }
 
   patchForm(form: any) {

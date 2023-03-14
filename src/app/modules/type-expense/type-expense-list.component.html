@@ -12,7 +12,7 @@
 
         <div class="col-12">
 
-            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 striped">
 
                 <ng-container matColumnDef="description">
                     <th mat-header-cell *matHeaderCellDef>Description</th>
@@ -38,7 +38,6 @@
                         </button>
                     </td>
                 </ng-container>
-
                 <tr mat-row *matRowDef="let row; columns: displayedColumns;">
                 </tr>
 

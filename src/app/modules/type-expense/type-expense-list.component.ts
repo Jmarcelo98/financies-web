@@ -30,7 +30,7 @@ export class TypeExpenseListComponent implements OnInit {
   }
 
   getAllTypeExpenses() {
-    this.typeExpenseService.getAllTypeExpenses(this.paginator).subscribe(res => {
+    this.typeExpenseService.getAllPageable(this.paginator).subscribe(res => {
       this.paginator.pageIndex = res.number;
       this.paginator.totalElements = res.totalElements;
       this.dataSource = res.content;
