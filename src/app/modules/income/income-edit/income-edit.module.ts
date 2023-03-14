@@ -10,6 +10,7 @@ import { FormControlExceptionModule } from 'src/app/shared/directives/form-contr
 import { NgxCurrencyModule } from 'ngx-currency';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { MatRadioModule } from '@angular/material/radio';
     CommonModule,
     IncomeEditRoutingModule,
     MatFormFieldModule,
+    MatButtonModule,
     MatInputModule,
     FormsModule,
     ReactiveFormsModule,

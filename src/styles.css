@@ -4,9 +4,14 @@
 
 :root {
 
-    /* PRIORITY - COLORS */
+    /* COLORS */
     --color-primary: #3f51b5;
+    --color-primary-hover: #4d5db8e2;
+    --color-danger: #b53f3f;
+    --color-danger-hover: #b84d4de2;
     --color-white: white;
+
+    /* COLORS BTNS */
     --color-btn-add: #3f51b54a;
     --color-btn-search: #6d86ff21;
     --color-btn-search-hover: #1168eb66;
@@ -20,20 +25,10 @@
     /* CARD */
     --shadow-card: 0 3px 4px 0px rgba(0, 0, 0, 0.6);
 
-
-
-    --color-primary-hover: #4d5db8e2;
-    --color-danger: #b53f3f;
-    --color-danger-hover: #b84d4de2;
-    /* --color-brand-primary-down: #1944B8; */
-
     /* NEUTRALS */
-    --color-neutral-dark-up: #27314A;
-    --color-neutral-dark-medium: #4F596D;
     --color-neutral-dark-down: #8D95AC;
     --color-neutral-medium-up: #AFBAD7;
     --color-neutral-medium-down: #EEEFF3;
-    --color-neutral-light: #FFFFFF;
     --color-neutral-light-up: #fbfbfb;
 
 
@@ -51,6 +46,9 @@
     --space-xl: 24px;
 
     /* FEEDBACKS */
+    --color-font-feedback-negative: #27314A;
+    --color-font-feedback-positive: white;
+
     --color-feedback-negative-light: #FBE5E7;
     --color-feedback-positive-medium: #238A4F;
     --color-feedback-negative-medium: #DD1F2E;
@@ -64,11 +62,11 @@
 
     /* BACKGROUNDS */
     --color-bg-dark-up: #27314A;
-    --color-bg-dark-down: #254890;
+    --bg-color-dialog-header: #254890;
 
 }
 
-/* BTN */
+/* BTN GLOBAL */
 .button-container {
     padding: 16px 0px;
 }
@@ -128,7 +126,6 @@
     background-color: var(--color-btn-search-hover);
 }
 
-
 /* span title */
 .span-title-down {
     color: var(--color-neutral-dark-down);
@@ -185,10 +182,6 @@ mat-card-actions {
 }
 
 /* CONFIG INPUT AND MAT-FORM-FIELD */
-/* mat-form-field {
-    display: block;
-} */
-
 mat-form-field.no-padding .mat-form-field-wrapper {
     padding-bottom: 0px !important;
 }
@@ -212,28 +205,10 @@ form mat-label {
     font-weight: var(--font-weight-regular);
 }
 
-.mr {
-    margin-right: var(--space-lg);
-}
-
-
-/* CONFIG BUTTONS */
-.ds-button {
-    font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-bold);
-}
-
-
-
-
-/* .btnListTypes {
-    text-align-last: start;
-} */
-
 /* CONFIG SNACKS */
 .snack-erro {
     background: var(--color-feedback-negative-light);
-    color: var(--color-neutral-dark-up);
+    color: var(--color-font-feedback-negative);
     border-left: solid 3px var(--color-feedback-negative-medium);
 }
 
@@ -244,14 +219,14 @@ form mat-label {
 
 .snack-sucesso {
     background: var(--color-feedback-positive-medium);
-    color: var(--color-white);
+    color: var(--color-font-feedback-positive);
     border-left: solid 3px var(--color-feedback-negative-ligh);
 }
 
 /* DIALOG */
 #confirm-dialog .header {
-    background: var(--color-bg-dark-down);
-    color: white;
+    background: var(--bg-color-dialog-header);
+    color: var(--color-white);
     padding: var(--space-sm) var(--space-xl);
     align-items: center;
 }

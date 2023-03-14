@@ -6,7 +6,6 @@ import { IncomeViewComponent } from './income-view.component';
 import { MatButtonModule } from '@angular/material/button';
 import { PipesModule } from 'src/app/shared/pipes/pipes.module';
 
-
 @NgModule({
   declarations: [
     IncomeViewComponent
