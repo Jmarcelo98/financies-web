@@ -13,8 +13,6 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatTreeModule } from '@angular/material/tree';
 
-
-
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtModule } from '@auth0/angular-jwt';
 import { jwtConfig } from './core/auth/jwt-config';
@@ -23,11 +21,9 @@ import { SnackbarComponentModule } from './shared/components/snackbar/snackbar.c
 import { MatIconModule } from '@angular/material/icon';
 import { NgxUiLoaderConfig, NgxUiLoaderHttpConfig, NgxUiLoaderHttpModule, NgxUiLoaderModule, NgxUiLoaderRouterModule, SPINNER } from 'ngx-ui-loader';
 import { AuthInterceptor } from './core/interceptor/auth.interceptor';
-import { DialogTypeItemModule } from './shared/components/dialog-type-item/dialog-type-item.module';
 import { registerLocaleData } from '@angular/common';
 import ptBr from '@angular/common/locales/pt';
 import { CurrencyMaskInputMode, NgxCurrencyModule, } from 'ngx-currency';
-import { MatSelectModule } from '@angular/material/select';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   fgsType: SPINNER.fadingCircle,
@@ -80,7 +76,8 @@ registerLocaleData(ptBr);
     NgxUiLoaderRouterModule,
     NgxUiLoaderHttpModule.forRoot(ngxUiHttpLoaderConfig),
     JwtModule.forRoot(jwtConfig),
-    DialogTypeItemModule
+    
+    // MatSelectModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },

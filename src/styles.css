@@ -4,18 +4,25 @@
 
 :root {
 
+    /* PRIORITY - COLORS */
+    --color-primary: #3f51b5;
+    --color-white: white;
+    --color-btn-add: #3f51b54a;
+    --color-btn-search: #6d86ff21;
+    --color-btn-search-hover: #1168eb66;
+
+
     /* TOOLBAR */
     --shadow-toolbar: 0px 2px 10px 0px #00800063;
     --shadow-toolbar-register-login: 0px 1px 0px 0px rgba(255, 255, 255, 0.247);
 
+
     /* CARD */
     --shadow-card: 0 3px 4px 0px rgba(0, 0, 0, 0.6);
 
-    /* PRIORITY */
-    --color-primary: #3f51b5;
-    --color-white: white;
+
+
     --color-primary-hover: #4d5db8e2;
-    --color-btn-add: #3f51b529;
     --color-danger: #b53f3f;
     --color-danger-hover: #b84d4de2;
     /* --color-brand-primary-down: #1944B8; */
@@ -61,9 +68,77 @@
 
 }
 
-/* GLOBAL */
-.newItem {
+/* BTN */
+.button-container {
+    padding: 16px 0px;
+}
+
+/* btn-add */
+.btn-add {
+    background-color: var(--color-btn-add);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* btn-delete */
+.btn-delete {
+    text-align: right;
+}
+
+/* primary */
+.btn-primary {
+    background: var(--color-primary);
+    color: white;
+    margin: 10px 20px !important;
+}
+
+.btn-primary i {
+    font-size: 14px;
+    margin-right: var(--space-sm);
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary-hover);
+}
+
+/* danger */
+.btn-danger {
+    background: var(--color-danger);
+    color: white;
+    margin: 10px 20px !important;
+}
+
+.btn-danger i {
+    font-size: 14px;
+    margin-right: var(--space-sm);
+    display: inline-block;
+}
+
+.btn-danger:hover {
+    background-color: var(--color-danger-hover);
+}
+
+/* btn search */
+.btn-search {
+    margin-top: 25px !important;
+    background-color: var(--color-btn-search);
+}
+
+.btn-search:hover {
+    background-color: var(--color-btn-search-hover);
+}
+
+
+/* span title */
+.span-title-down {
+    color: var(--color-neutral-dark-down);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-regular);
+}
+
+/* GLOBAL */
+#content-dialog-mt {
+    margin-top: 15px;
 }
 
 .page-container {
@@ -78,121 +153,13 @@
     align-items: center;
 }
 
-
-/* TYPOGRAPHY */
-/* p.typography {
-    margin-bottom: 0;
-} */
-
-/* .typography.ellipsis {
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-} */
-
-/* .typography.primary {
-    color: var(--color-brand-primary);
-} */
-
-/* .typography.dark-up {
-    color: var(--color-neutral-dark-up);
-} */
-
-.typography.dark-down {
-    color: var(--color-neutral-dark-down);
-}
-/* 
-.typography.neutral-light {
-    color: var(--color-neutral-light);
-} */
-
-/* .typography.medium-up {
-    color: var(--color-neutral-medium-up);
-} */
-
-/* .typography.headlines {
-    margin: 0;
-}
-
-.typography.headlines.h1 {
-    font-size: var(--font-size-6xl);
-    font-weight: var(--font-weight-black);
-}
-
-.typography.headlines.h2 {
-    font-size: var(--font-size-5xl);
-    font-weight: var(--font-weight-black);
-}
-
-.typography.headlines.h3 {
-    font-size: var(--font-size-4xl);
-    font-weight: var(--font-weight-regular);
-}
-
-.typography.headlines.h4 {
-    font-size: var(--font-size-3xl);
-    font-weight: var(--font-weight-medium);
-}
-
-.typography.headlines.h5 {
-    font-size: var(--font-size-2xl);
-    font-weight: var(--font-weight-bold);
-}
-
-.typography.headlines.h6 {
-    font-size: var(--font-size-xl);
-    font-weight: var(--font-weight-bold);
-} */
-
-/* .typography.body {
-    font-weight: var(--font-weight-regular);
-} */
-
-.typography.body.subtitle {
-    font-size: var(--font-size-xl);
-    font-weight: var(--font-weight-medium);
-}
-
-.typography.body.body-lg {
-    font-size: var(--font-size-lg);
-}
-
-.typography.body.body-md {
-    font-size: var(--font-size-md);
-}
-
-.typography.body.body-sm {
-    font-size: var(--font-size-sm);
-}
-
-.typography.body.body-2xs {
-    font-size: var(--font-size-2xs);
-}
-
-.typography.utility.button-md {
-    font-size: var(--font-size-md);
-    font-weight: var(--font-weight-bold);
-}
-
-.typography.utility.button-sm {
-    font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-bold);
-}
-
-.typography.utility.label {
-    font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-regular);
-}
-
-.typography.utility.caption {
-    font-size: var(--font-size-xs);
-    font-weight: var(--font-weight-regular);
+.icon-table {
+    text-align-last: start;
 }
 
 .block {
     display: block;
 }
-
 
 /* CONFIG CARD */
 mat-card-title {
@@ -205,15 +172,23 @@ mat-card-subtitle {
     font-style: italic;
 }
 
+mat-card-actions {
+    margin-top: 15px;
+}
+
 .titulo-card {
     font-size: 22px;
 }
 
-.example-card {
+.card-shadow {
     box-shadow: var(--shadow-card) !important;
 }
 
 /* CONFIG INPUT AND MAT-FORM-FIELD */
+/* mat-form-field {
+    display: block;
+} */
+
 mat-form-field.no-padding .mat-form-field-wrapper {
     padding-bottom: 0px !important;
 }
@@ -248,41 +223,12 @@ form mat-label {
     font-weight: var(--font-weight-bold);
 }
 
-.ds-button-primary {
-    background: var(--color-primary);
-    color: white;
-    margin: 10px 20px !important;
-}
 
-.ds-button-primary i {
-    font-size: 14px;
-    margin-right: var(--space-sm);
-    display: inline-block;
-}
 
-.ds-button-primary:hover {
-    background-color: var(--color-primary-hover);
-}
 
-.ds-button-danger {
-    background: var(--color-danger);
-    color: white;
-    margin: 10px 20px !important;
-}
-
-.ds-button-danger i {
-    font-size: 14px;
-    margin-right: var(--space-sm);
-    display: inline-block;
-}
-
-.ds-button-danger:hover {
-    background-color: var(--color-danger-hover);
-}
-
-.btnListTypes {
+/* .btnListTypes {
     text-align-last: start;
-}
+} */
 
 /* CONFIG SNACKS */
 .snack-erro {
@@ -308,10 +254,6 @@ form mat-label {
     color: white;
     padding: var(--space-sm) var(--space-xl);
     align-items: center;
-}
-
-#confirm-dialog .header button {
-    color: white;
 }
 
 #confirm-dialog .icon-close {
@@ -340,4 +282,14 @@ form mat-label {
 
 .striped .mat-row:nth-child(odd) {
     background-color: var(--color-neutral-medium-down);
+}
+
+/* RADIO */
+.radioRight {
+    margin-right: 2.5em;
+}
+
+.labelOutMatFormField {
+    margin: 0.5em 0;
+    display: block;
 }

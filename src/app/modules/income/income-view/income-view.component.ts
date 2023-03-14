@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FormDialogConfirmComponent } from 'src/app/shared/components/form-dialog-confirm/form-dialog-confirm.component';
+import { DialogConfirmComponent } from 'src/app/shared/components/dialog-confirm/dialog-confirm.component';
 import { IIncome } from 'src/app/shared/interfaces/income';
 import { IncomeService } from 'src/app/shared/services/income.service';
 
@@ -42,7 +42,7 @@ export class IncomeViewComponent implements OnInit {
 
   delete() {
 
-    const dialogRef = this.dialog.open(FormDialogConfirmComponent, {
+    const dialogRef = this.dialog.open(DialogConfirmComponent, {
         width: '500px',
         data: {
             title: 'Atenção',

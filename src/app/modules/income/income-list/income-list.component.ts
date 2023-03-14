@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import * as moment from 'moment';
 import { IPaginator } from 'src/app/shared/components/paginator/paginator.component';
 import { IncomeService } from 'src/app/shared/services/income.service';
+import { TypeIncomeService } from 'src/app/shared/services/type-income.service';
 
 @Component({
   selector: 'app-income-list',
@@ -10,10 +12,12 @@ import { IncomeService } from 'src/app/shared/services/income.service';
 })
 export class IncomeListComponent implements OnInit {
 
-  constructor(private incomeService: IncomeService) { }
+  constructor(private incomeService: IncomeService, private typeIncomeService: TypeIncomeService) { }
 
   formFilter = new FormGroup({
-    dateReference: new FormControl(null, []),
+    dateReference: new FormControl(moment(), []),
+    typeIncome: new FormControl(null),
+    isReceived: new FormControl(null)
   });
 
   paginator: IPaginator = {
@@ -23,9 +27,10 @@ export class IncomeListComponent implements OnInit {
   }
 
   dataSource: any;
+  typesIncome: any;
 
   ngOnInit(): void {
-    this.getAll()
+    this.getListTypeIncome()
   }
 
   getAll() {
@@ -33,6 +38,21 @@ export class IncomeListComponent implements OnInit {
       this.paginator.pageIndex = res.number;
       this.paginator.totalElements = res.totalElements;
       this.dataSource = res.content;
+    })
+  }
+
+  search () {
+    
+  }
+
+  getListTypeIncome() {
+    this.typeIncomeService.getAll().subscribe(res => {
+
+      this.typesIncome = res;
+
+    }, err => {
+      console.log(err);
+
     })
   }
 

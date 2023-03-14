@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { RouterModule } from '@angular/router';
-import { FormDialogConfirmComponent } from './form-dialog-confirm.component';
+import { DialogConfirmComponent } from './dialog-confirm.component';
 
 
 @NgModule({
@@ -10,8 +10,8 @@ import { FormDialogConfirmComponent } from './form-dialog-confirm.component';
     CommonModule, 
     RouterModule,
   ],
-  exports: [FormDialogConfirmComponent],
-  declarations: [FormDialogConfirmComponent]
+  exports: [DialogConfirmComponent],
+  declarations: [DialogConfirmComponent]
 })
-export class FormDialogConfirmComponentModule {
+export class DialogConfirmComponentModule {
 }

@@ -3,13 +3,13 @@
     <div class="row mt-3">
 
         <div class="col-6">
-            <span class="typography utility label dark-down block">Description</span>
-            <span class="typography body body-md bold">{{income?.description}}</span>
+            <span class="block span-title-down">Description</span>
+            <span>{{income?.description}}</span>
         </div>
 
         <div class="col-6">
-            <span class="typography utility label dark-down block">Value</span>
-            <span class="typography body body-md">{{income?.value | currency: 'BRL'}}</span>
+            <span class="block span-title-down">Value</span>
+            <span>{{income?.value | currency: 'BRL'}}</span>
         </div>
 
     </div>
@@ -18,18 +18,18 @@
 
 
         <div class="col-6">
-            <span class="typography utility label dark-down block">Type Income</span>
-            <span class="typography body body-md">{{income?.typeIncome.description}}</span>
+            <span class="block span-title-down">Type Income</span>
+            <span>{{income?.typeIncome.description}}</span>
         </div>
 
         <div class="col-3">
-            <span class="typography utility label dark-down block">Is Received</span>
-            <span class="typography body body-md">{{income?.isReceived | boolean}}</span>
+            <span class="block span-title-down">Is Received</span>
+            <span>{{income?.isReceived | boolean}}</span>
         </div>
 
         <div class="col-3">
-            <span class="typography utility label dark-down block">Date Inclusion</span>
-            <span class="typography body body-md">{{income?.dateInclusion | date: 'dd/MM/yyy'}}</span>
+            <span class="block span-title-down">Date Inclusion</span>
+            <span>{{income?.dateInclusion | date: 'dd/MM/yyy'}}</span>
         </div>
 
 
@@ -39,15 +39,15 @@
 
         <div class="col-6 d-flex">
 
-            <button mat-raised-button class="ds-button ds-button-primary" [routerLink]="['/income/edit',  income?.id]">
+            <button mat-raised-button class="btn-primary" [routerLink]="['/income/edit',  income?.id]">
                 <i matSuffix class="fi fi-rr-pencil"></i>
                 Edit
             </button>
-            
+
         </div>
 
-        <div class="col-6 deleteBtn">
-            <button mat-raised-button (click)="delete()" class="ds-button-danger">
+        <div class="col-6 btn-delete">
+            <button mat-raised-button (click)="delete()" class="btn-danger">
                 <i matSuffix class="fi fi-rr-trash"></i>
                 Delete
             </button>

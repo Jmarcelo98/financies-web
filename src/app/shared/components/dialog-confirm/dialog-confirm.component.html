@@ -1,0 +1,25 @@
+<div id="confirm-dialog">
+    <div class="header d-flex justify-content-between align-content-center">
+        <div>
+            <span>{{data.title}}</span>
+        </div>
+
+        <button class="btn icon-close" (click)="onNoClick()">
+            <i class="fi fi-rr-cross"></i>
+        </button>
+
+    </div>
+
+
+    <div class="modal-content" id="content-dialog-mt">
+        
+        <span [innerHTML]="data.text"></span>
+
+        <div class="action-buttons mt-4">
+            <button class="btn btn-danger" (click)="secondaryClick()">{{data.buttons.secondary}}</button>
+
+            <button class="btn btn-primary" cdkFocusInitial
+                (click)="primaryClick()">{{data.buttons.primary}}</button>
+        </div>
+    </div>
+</div>

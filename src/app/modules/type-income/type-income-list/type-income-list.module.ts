@@ -8,6 +8,7 @@ import { TypeIncomeListComponent } from './type-income-list.component';
 import { MatButtonModule } from '@angular/material/button';
 import { PaginatorComponentModule } from 'src/app/shared/components/paginator/paginator.component.module';
 import { MatDialogModule } from '@angular/material/dialog';
+import { DialogTypeItemModule } from 'src/app/shared/components/dialog-type-item/dialog-type-item.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatTableModule,
     MatButtonModule,
     MatDialogModule,
-    PaginatorComponentModule
+    PaginatorComponentModule,
+    DialogTypeItemModule
   ]
 })
 export class TypeIncomeListModule { }

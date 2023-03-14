@@ -1,23 +1,24 @@
 <div id="confirm-dialog">
+    
     <div class="header d-flex justify-content-between align-content-center">
         <div>
-            <span class="typography body body-lg-bold">
+            <span>
                 {{data.title}}
             </span>
         </div>
 
-        <button class="btn ds-button-rounded tertiary icon-close" (click)="onNoClick()">
+        <button class="btn icon-close" (click)="onNoClick()">
             <i class="fi fi-rr-cross"></i>
         </button>
 
     </div>
 
 
-    <div class="modal-content">
+    <div class="modal-content" id="content-dialog-mt">
 
         <form [formGroup]="formType">
 
-            <div class="row" id="iconDescription">
+            <div class="row">
 
                 <div class="col">
                     <mat-label>Description</mat-label>
@@ -34,9 +35,9 @@
 
                 <div class="col-12">
 
-                    <div class="action-buttons  mt-4">
+                    <div class="action-buttons">
 
-                        <button mat-button class="btn ds-button-danger" (click)="cancelClick()">
+                        <button mat-button class="btn btn-danger" (click)="cancelClick()">
                             <i class="fi fi-rr-check"></i>
                             Cancel
                         </button>
@@ -45,7 +46,7 @@
 
                         <ng-template #add>
 
-                            <button mat-button class="btn ds-button-primary"
+                            <button mat-button class="btn btn-primary"
                                 (click)="data.isIncome ? addTypeIncome() : addTypeExpense() ">
                                 <i class="fi fi-rr-check"></i>
                                 {{data.buttons.primary}}
@@ -55,33 +56,21 @@
 
                         <ng-template #edit>
 
-                            <button mat-button class="btn ds-button-primary"
+                            <button mat-button class="btn btn-primary"
                                 (click)="data.isIncome ? editTypeIncome() : editTypeExpense() ">
                                 <i class="fi fi-rr-check"></i>
                                 {{data.buttons.primary}}
                             </button>
 
                         </ng-template>
-
-                        <!-- <button mat-button class="btn ds-button-primary"
-                            (click)="data.isIncome && data.objectEdit == null ? addTypeIncome() : addTypeExpense() ">
-                            <i class="fi fi-rr-check"></i>
-                            {{data.buttons.primary}}
-                        </button> -->
-
-
-
-
+       
                     </div>
-
 
                 </div>
 
             </div>
 
         </form>
-
-
 
     </div>
 </div>
