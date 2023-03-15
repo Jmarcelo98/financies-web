@@ -20,6 +20,7 @@
 
     /* TOOLBAR */
     --shadow-toolbar: 0px 2px 10px 0px #00800063;
+    --shadow-filter: 0px 3px 5px 0px #3f51b5;
     --shadow-toolbar-register-login: 0px 1px 0px 0px rgba(255, 255, 255, 0.247);
 
 
@@ -64,7 +65,7 @@
     /* BACKGROUNDS */
     --color-bg-dark-up: #27314A;
     --bg-color-dialog-header: #254890;
-
+    --color-bg-filter: #27314A;
 }
 
 /* BTN GLOBAL */
@@ -180,6 +181,13 @@
 
 .mr-icon-input {
     margin-right: 15px;
+}
+
+.filter {
+    /* background-color: var(--color-bg-filter); */
+    /* color: var(--color-white); */
+    padding: 20px 10px;
+    box-shadow: var(--shadow-filter);
 }
 
 /* CONFIG CARD */
