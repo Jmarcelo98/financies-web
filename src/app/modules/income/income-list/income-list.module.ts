@@ -15,6 +15,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MAT_MOMENT_DATE_ADAPTER_OPTIONS, MomentDateAdapter } from '@angular/material-moment-adapter';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxMaskModule } from 'ngx-mask';
 
 export const MY_FORMATS = {
   parse: {
@@ -46,6 +47,7 @@ export const MY_FORMATS = {
     MatNativeDateModule,
     ReactiveFormsModule,
     PaginatorComponentModule,
+    NgxMaskModule.forRoot(),
   ],
   providers: [
     {

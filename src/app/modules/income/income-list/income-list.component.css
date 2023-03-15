@@ -6,6 +6,6 @@ h4 {
     font-family: monospace;
 }
 
-/* mat-form-field {
-    display: block;
-} */
+#radio-flex {
+    display: inline-flex;
+}
