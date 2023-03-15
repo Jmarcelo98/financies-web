@@ -15,7 +15,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MomentDateAdapter } from '@angular/material-moment-adapter';
 import { ReactiveFormsModule } from '@angular/forms';
-import { NgxMaskModule } from 'ngx-mask';
+// import { NgxMaskModule } from 'ngx-mask';
 
 @NgModule({
   declarations: [
@@ -35,7 +35,7 @@ import { NgxMaskModule } from 'ngx-mask';
     MatNativeDateModule,
     ReactiveFormsModule,
     PaginatorComponentModule,
-    NgxMaskModule.forRoot(),
+    // NgxMaskModule.forRoot(),
   ],
   providers: [
     {

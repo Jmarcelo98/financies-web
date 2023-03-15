@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { SnackbarProvider } from '../../provider/snackbar.provider';
 import { TypeIncomeService } from '../../services/type-income.service';
+import { TypeExpenseService } from '../../services/type-expense.service';
 import { validateForm } from '../../utils/utilitarias';
 
 @Component({
@@ -13,7 +14,7 @@ import { validateForm } from '../../utils/utilitarias';
 export class DialogTypeItemComponent implements OnInit {
 
   constructor(public dialogRef: MatDialogRef<DialogTypeItemComponent>, private snackBar: SnackbarProvider, @Inject
-    (MAT_DIALOG_DATA) public data: any, private typeIncomeService: TypeIncomeService) {
+    (MAT_DIALOG_DATA) public data: any, private typeIncomeService: TypeIncomeService, private typeExpenseService: TypeExpenseService) {
   }
 
   ngOnInit(): void {
@@ -55,7 +56,7 @@ export class DialogTypeItemComponent implements OnInit {
     if (this.formType.valid) {
 
       this.typeIncomeService.update(this.formType.getRawValue()).subscribe(suc => {
-        this.showSnackSucesso('Type of income successfully updated');
+        this.showSnackSucesso('Type of income successfully updated'); console.log("b");
         this.dialogRef.close()
         setTimeout(() => {
           window.location.reload();
@@ -71,10 +72,39 @@ export class DialogTypeItemComponent implements OnInit {
   // type expense
   editTypeExpense() {
 
+    if(this.formType.valid) {
+      
+      this.typeExpenseService.updateTypeExpense(this.formType.getRawValue()).subscribe(res => {
+        this.showSnackSucesso('Type of expense succesfully updated');
+        this.dialogRef.close()
+        setTimeout(() => {
+          window.location.reload();
+        }, 1200);
+
+      }, err => {
+        console.log(err);
+      })
+    } else {
+      this.validateForm()
+    }
+
   }
 
   addTypeExpense() {
-    console.log("b");
+   
+    if(this.formType.valid) {
+      this.typeExpenseService.createTypeExpense(this.formType.getRawValue()).subscribe(res => {
+        this.showSnackSucesso('Type expense succesfully created');
+        this.dialogRef.close()
+        setTimeout(() => {
+          window.location.reload();
+        }, 1200)
+      }, err => {
+        console.log(err);
+      })
+    } else {
+      this.validateForm();
+    }
   }
 
   patchForm(form: any) {
