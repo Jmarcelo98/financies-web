@@ -45,13 +45,15 @@ export const MY_FORMATS_DD = {
     MatRadioModule,
     NgxCurrencyModule,
     MatDatepickerModule
-  ],providers: [
+  ],
+  providers: [
     {
       provide: DateAdapter,
       useClass: MomentDateAdapter,
       deps: [MAT_DATE_LOCALE, MAT_MOMENT_DATE_ADAPTER_OPTIONS],
     },
     { provide: MAT_DATE_FORMATS, useValue: MY_FORMATS_DD },
+    { provide: MAT_DATE_FORMATS, useValue: MY_FORMATS_DD }
   ]
 })
 export class IncomeEditModule { }

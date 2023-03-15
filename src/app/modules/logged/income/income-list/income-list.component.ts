@@ -1,14 +1,28 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { MAT_DATE_FORMATS } from '@angular/material/core';
 import { IPaginator } from 'src/app/shared/components/paginator/paginator.component';
 import { IncomeService } from 'src/app/shared/services/income.service';
 import { TypeIncomeService } from 'src/app/shared/services/type-income.service';
 
 
+export const MY_FORMATS = {
+  parse: {
+    dateInput: 'MM/YYYY',
+  },
+  display: {
+    dateInput: 'MM/YYYY',
+    monthYearLabel: 'MMM YYYY',
+    dateA11yLabel: 'LL',
+    monthYearA11yLabel: 'MMMM YYYY',
+  },
+};
+
 @Component({
   selector: 'app-income-list',
   templateUrl: './income-list.component.html',
-  styleUrls: ['./income-list.component.css']
+  styleUrls: ['./income-list.component.css'],
+  providers: [{ provide: MAT_DATE_FORMATS, useValue: MY_FORMATS }]
 })
 export class IncomeListComponent implements OnInit {
 
@@ -70,6 +84,6 @@ export class IncomeListComponent implements OnInit {
     this.search();
   }
 
-  public displayedColumns: string[] = ['value', 'description', 'actionsColumn'];
+  public displayedColumns: string[] = ['value', 'description', 'dateReference' , 'actionsColumn'];
 
 }
