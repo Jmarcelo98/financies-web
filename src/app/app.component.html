@@ -28,7 +28,7 @@
 
   <!-- nome e foto -->
   <div *ngIf="isLogged == true">
-    <span class="name-user">Hi, {{userInfo?.name.split(" ", 1)}}</span>
+    <span class="name-user">Hi, {{userInfo?.name != null ? userInfo?.name.split(" ", 1) : ''}}</span>
 
     <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
       <img class="image-user" [src]="userImage">

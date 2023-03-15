@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/auth/auth.service';
 import { TokenStorageService } from 'src/app/core/auth/token-storage.service';
 import { CustomValidations } from 'src/app/shared/utils/custom-validations';
+import { validateForm } from 'src/app/shared/utils/utilitarias';
 
 @Component({
   selector: 'app-register',
@@ -38,7 +39,7 @@ export class RegisterComponent implements OnInit {
       })
 
     } else {
-      this.validaCampos(this.formRegister);
+      this.validateForm();
     }
 
   }
@@ -55,13 +56,8 @@ export class RegisterComponent implements OnInit {
     })
   }
 
-
-
-  validaCampos(form: FormGroup) {
-    const controls = Object.keys(form.controls);
-    for (const control of controls) {
-      form.controls[control].updateValueAndValidity();
-    }
+  validateForm() {
+    validateForm(this.formRegister);
   }
 
 }

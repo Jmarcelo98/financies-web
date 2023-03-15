@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { SnackbarProvider } from '../../provider/snackbar.provider';
 import { TypeIncomeService } from '../../services/type-income.service';
+import { validateForm } from '../../utils/utilitarias';
 
 @Component({
   selector: 'app-dialog-type-item',
@@ -44,11 +45,10 @@ export class DialogTypeItemComponent implements OnInit {
       })
 
     } else {
-      this.validaCampos(this.formType)
+      this.validateForm()
     }
 
   }
-
 
   editTypeIncome() {
 
@@ -64,7 +64,7 @@ export class DialogTypeItemComponent implements OnInit {
         console.log(err);
       })
     } else {
-      this.validaCampos(this.formType)
+      this.validateForm()
     }
   }
 
@@ -81,13 +81,6 @@ export class DialogTypeItemComponent implements OnInit {
     this.formType.patchValue(form)
   }
 
-  validaCampos(form: FormGroup) {
-    const controls = Object.keys(form.controls);
-    for (const control of controls) {
-      form.controls[control].updateValueAndValidity();
-    }
-  }
-
   cancelClick() {
     this.dialogRef.close({ secondary: true });
   }
@@ -102,6 +95,10 @@ export class DialogTypeItemComponent implements OnInit {
 
   showSnackSucesso(msg: string) {
     this.snackBar.showSnackSuccess(msg);
+  }
+
+  validateForm() {
+    validateForm(this.formType);
   }
 
 }
