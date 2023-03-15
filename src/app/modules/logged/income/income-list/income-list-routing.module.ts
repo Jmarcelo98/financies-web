@@ -17,7 +17,7 @@ const routes: Routes = [
     loadChildren: () => import('../income-view/income-view.module').then(m => m.IncomeViewModule)
   },
   {
-    path: 'edit/:id',
+    path: 'view/edit/:id',
     component: IncomeEditComponent,
     loadChildren: () => import('../income-edit/income-edit.module').then(m => m.IncomeEditModule)
   }

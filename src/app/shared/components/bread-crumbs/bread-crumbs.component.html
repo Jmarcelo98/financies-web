@@ -1,0 +1,31 @@
+<div class="breadcrumbs-content">
+
+    <div *ngIf="trails && trails.length > 0">
+
+        <div class="breadcrumbs-box-trail">
+            <button (click)="navTo('')">
+                <span>Home</span>
+            </button>
+            <ng-container *ngFor="let item of trails; let i = index " class="col-trail">
+                <ng-container *ngIf="item.parent" class="title-content">
+                    <i class="fi fi-rr-angle-small-right"></i>
+                    <button [class.disabled]="true">
+                        <span>{{item.parent}}</span>
+                    </button>
+                </ng-container>
+
+                <ng-container *ngIf="i < trails.length - 1">
+                    <i class="fi fi-rr-angle-small-right"></i>
+                    <button (click)="navTo(item.route, item.containsParams, item?.isBack)" [class.disabled]="!item.enable">
+                        <span>{{ item.name }}</span>
+                    </button>
+                </ng-container>
+            </ng-container>
+        </div>
+
+        <div class="title-content">
+            <i class="fi fi-rr-angle-small-left"></i>
+            <span class="typography headlines h5">{{trails[trails.length - 1].name}} </span>
+        </div>
+    </div>
+</div>
