@@ -24,6 +24,7 @@ import { AuthInterceptor } from './core/interceptor/auth.interceptor';
 import { registerLocaleData } from '@angular/common';
 import ptBr from '@angular/common/locales/pt';
 import { CurrencyMaskInputMode, NgxCurrencyModule, } from 'ngx-currency';
+import { BreadCrumbsComponentModule } from './shared/components/bread-crumbs/bread-crumbs.component.module';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   fgsType: SPINNER.fadingCircle,
@@ -72,6 +73,7 @@ registerLocaleData(ptBr);
     MatIconModule,
     MatTreeModule,
     SnackbarComponentModule,
+    BreadCrumbsComponentModule,
     NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
     NgxUiLoaderRouterModule,
     NgxUiLoaderHttpModule.forRoot(ngxUiHttpLoaderConfig),

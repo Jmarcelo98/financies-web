@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuardService } from 'src/app/core/auth/can-active.service';
-import { IncomeEditComponent } from '../income-edit/income-edit.component';
 import { IncomeViewComponent } from './income-view.component';
 
 const routes: Routes = [
@@ -10,6 +9,7 @@ const routes: Routes = [
     component: IncomeViewComponent,
     canActivate: [AuthGuardService]
   },
+ 
 ];
 
 @NgModule({

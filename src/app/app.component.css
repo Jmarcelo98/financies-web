@@ -69,3 +69,9 @@ mat-tree-node,
 .menu-item>.col-6>a>span {
   box-shadow: var(--shadow-toolbar-register-login)
 }
+
+.breadcrumb-content {
+  --tw-bg-opacity: 1;
+  background-color: var(--color-neutral-dark-up);
+  /* padding-bottom: 80px; */
+}
