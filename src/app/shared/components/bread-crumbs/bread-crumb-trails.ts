@@ -1,5 +1,7 @@
 export const TRAILS = {
 
+    '': {},
+
     income: {
 
         name: 'Search Income',
