@@ -1,0 +1,12 @@
+mat-card-content {
+    text-align-last: center;
+}
+
+.valueCurrent {
+    font-family: monospace;
+    font-size: var(--font-size-x-lgg);
+}
+
+.rowValues {
+    text-align-last: center;
+}
