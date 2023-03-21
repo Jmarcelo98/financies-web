@@ -10,16 +10,20 @@
     <mat-divider></mat-divider>
   </mat-card-content>
   <mat-card-actions>
-    <div class="row rowValues">
+    <div class="row rowValues mt-2">
 
-      <div class="col-6">
-        <p>Receitas</p>
-        <p></p>
+      <div class="col-6" id="income">
+        <span>
+          <p>Income</p>
+        </span>
+        <p>{{dataSource?.valueIncome | currency: 'BRL'}}</p>
       </div>
 
       <div class="col-6">
-        <p>Despesas</p>
-        <p></p>
+        <span>
+          <p>Expense</p>
+        </span>
+        <p id="expense">{{dataSource?.valueExpense | currency: 'BRL'}}</p>
       </div>
 
     </div>

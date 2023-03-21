@@ -10,3 +10,16 @@ mat-card-content {
 .rowValues {
     text-align-last: center;
 }
+
+#income {
+    color: var(--color-income);
+}
+
+#expense {
+    color: var(--color-expense);
+}
+
+span > p {
+    color: var(--color-gray);
+    margin-bottom: 5px;
+}

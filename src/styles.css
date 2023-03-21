@@ -10,6 +10,9 @@
     --color-danger: #b53f3f;
     --color-danger-hover: #b84d4de2;
     --color-white: white;
+    --color-income: green;
+    --color-expense: red;
+    --color-gray: gray;
 
     /* COLORS BTNS */
     --color-btn-add: #3f51b54a;

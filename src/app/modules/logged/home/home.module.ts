@@ -3,8 +3,9 @@ import { CommonModule } from '@angular/common';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
-import { CurrentBalanceComponent } from './current-balance/current-balance.component';
 import { CurrentBalanceModule } from './current-balance/current-balance.module';
+import { SpentMonthComponent } from './spent-month/spent-month.component';
+import { SpentMonthModule } from './spent-month/spent-month.module';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { CurrentBalanceModule } from './current-balance/current-balance.module';
   imports: [
     CommonModule,
     HomeRoutingModule,
-    CurrentBalanceModule
+    CurrentBalanceModule,
+    SpentMonthModule
   ]
 })
 export class HomeModule { }
