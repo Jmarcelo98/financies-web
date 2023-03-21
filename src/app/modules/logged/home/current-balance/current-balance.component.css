@@ -1,3 +1,7 @@
+mat-card {
+    height: 225px;
+}
+
 mat-card-content {
     text-align-last: center;
 }

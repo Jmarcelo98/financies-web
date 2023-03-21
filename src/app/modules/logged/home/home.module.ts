@@ -4,8 +4,8 @@ import { CommonModule } from '@angular/common';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { CurrentBalanceModule } from './current-balance/current-balance.module';
-import { SpentMonthComponent } from './spent-month/spent-month.component';
 import { SpentMonthModule } from './spent-month/spent-month.module';
+import { ExpenseCategoryModule } from './expense-category/expense-category.module';
 
 
 @NgModule({
@@ -16,7 +16,8 @@ import { SpentMonthModule } from './spent-month/spent-month.module';
     CommonModule,
     HomeRoutingModule,
     CurrentBalanceModule,
-    SpentMonthModule
+    SpentMonthModule,
+    ExpenseCategoryModule
   ]
 })
 export class HomeModule { }
