@@ -20,8 +20,6 @@ export class CurrentBalanceComponent implements OnInit {
     this.homeService.getCurrentBalance().subscribe( res => {
 
       this.dataSource = res;
-      console.log(res);
-      
 
     }, err => {
       console.log(err);

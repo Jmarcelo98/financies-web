@@ -23,6 +23,7 @@
     "@angular/router": "~12.2.0",
     "@auth0/angular-jwt": "^5.1.2",
     "bootstrap": "^5.2.3",
+    "chart.js": "^4.2.1",
     "moment": "^2.29.4",
     "ngx-currency": "^3.0.0",
     "ngx-ui-loader": "^11.0.0",

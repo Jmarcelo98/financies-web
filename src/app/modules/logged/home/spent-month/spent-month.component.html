@@ -1,31 +1,26 @@
 <mat-card class="example-card">
-    <mat-card-header>
-      <mat-card-subtitle>a</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
-      <span class="valueCurrent">b</span>
-      <p>
-        <span>Current account balance</span>
-      </p>
+  <mat-card-header>
+    <mat-card-title>Monthly Expenses</mat-card-title>
+  </mat-card-header>
 
-    </mat-card-content>
-    <mat-card-actions>
-      <div class="row rowValues mt-2">
-  
-        <div class="col-6" id="income">
-          <span>
-            <p>Income</p>
-          </span>
-          <p>c</p>
+  <mat-card-content>
+    
+    <div class="row">
+
+      <div class="col-10">
+        <div id="divChart">
+          <canvas id="myChart"></canvas>
         </div>
-  
-        <div class="col-6">
-          <span>
-            <p>Expense</p>
-          </span>
-          <p id="expense">d</p>
-        </div>
-  
       </div>
-    </mat-card-actions>
-  </mat-card>
+
+      <div class="col-2">
+
+      </div>
+
+    </div>
+
+
+
+  </mat-card-content>
+
+</mat-card>

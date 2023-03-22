@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ExpenseCategoryComponent } from './expense-category.component';
+import { MatCardModule } from '@angular/material/card';
 
 
 
@@ -8,7 +9,8 @@ import { ExpenseCategoryComponent } from './expense-category.component';
   declarations: [ExpenseCategoryComponent],
   exports: [ExpenseCategoryComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    MatCardModule
   ]
 })
 export class ExpenseCategoryModule { }
