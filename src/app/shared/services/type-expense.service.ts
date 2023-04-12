@@ -15,7 +15,7 @@ const httpOptions = {
 export class TypeExpenseService extends BaseService {
 
   constructor(private http: HttpClient) {
-    super("/type-expenses");
+    super("/types-expenses");
    }
 
    getAllPageable(page: IPaginator): Observable<any> {

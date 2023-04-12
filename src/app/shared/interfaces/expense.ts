@@ -6,6 +6,6 @@ export interface IExpense {
     dateReference?: Date;
     isReceived?: boolean;
     value?: number;
-    typeIncome?: ITypeExpense;
+    typeExpense?: ITypeExpense;
     description?: string;
 }

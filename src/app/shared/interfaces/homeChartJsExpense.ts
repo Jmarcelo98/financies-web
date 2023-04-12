@@ -1,6 +1,6 @@
 import { ITypeExpense } from "./typeExpense";
 
 export interface IHomeChartJsExpense {
-    typeIncome?: ITypeExpense;
+    typeExpense?: ITypeExpense;
     value?: number;
 }

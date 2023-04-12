@@ -27,6 +27,10 @@ const routes: Routes = [
     loadChildren: () => import('./modules/logged/income/income-list/income-list.module').then(m => m.IncomeListModule),
   },
   {
+    path: 'expense',
+    loadChildren: () => import ('./modules/logged/expense/expense-list/expense-list/expense-list.module').then(m => m.ExpenseListModule),
+  },
+  {
     path: 'type-expense',
     loadChildren: () => import('./modules/logged/type-expense/type-expense-list.module').then(m => m.TypeExpenseListModule),
   },

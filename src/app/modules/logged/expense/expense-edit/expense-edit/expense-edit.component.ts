@@ -45,7 +45,7 @@ export class ExpenseEditComponent implements OnInit {
       description: new FormControl(null),
       value: new FormControl(null, Validators.required),
       isReceived: new FormControl(null, Validators.required),
-      typeIncome: new FormControl(null),
+      typeExpense: new FormControl(null),
       dateReference: new FormControl(null, Validators.required),
     },
       {
