@@ -6,6 +6,8 @@ import { HomeComponent } from './home.component';
 import { CurrentBalanceModule } from './current-balance/current-balance.module';
 import { SpentMonthModule } from './spent-month/spent-month.module';
 import { ExpenseCategoryModule } from './expense-category/expense-category.module';
+import { LastTransactionModule } from './last-transaction/last-transaction.module';
+
 
 
 @NgModule({
@@ -17,7 +19,8 @@ import { ExpenseCategoryModule } from './expense-category/expense-category.modul
     HomeRoutingModule,
     CurrentBalanceModule,
     SpentMonthModule,
-    ExpenseCategoryModule
+    ExpenseCategoryModule,
+    LastTransactionModule
   ]
 })
 export class HomeModule { }

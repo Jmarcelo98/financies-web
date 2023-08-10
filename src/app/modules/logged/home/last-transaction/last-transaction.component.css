@@ -1,0 +1,21 @@
+.last {
+    font-size: var(--font-size-lgg);
+}
+
+table {
+    width: 100%;
+}
+
+.mat-column-typeTransaction  {
+    padding-right: 3px;
+}
+
+.date {
+    font-style: italic;
+}
+
+@media screen and (max-width: 768px) {
+    .last {
+        margin-top: 50px;
+    }
+}

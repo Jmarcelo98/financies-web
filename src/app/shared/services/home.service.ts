@@ -27,5 +27,12 @@ export class HomeService extends BaseService {
     )
   }
 
+  getLastTransactions() {
+    return this.http.get<any>(`${this.endPoint}/last-transactions`).pipe(
+      map((response) => {
+        return (response);
+      })
+    )
+  }
 
 }
